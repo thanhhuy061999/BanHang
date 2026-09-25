@@ -591,15 +591,17 @@ async function checkSheetConfig() {
   try {
     const res = await fetch('/BanHang/api/sheets-config');
 
-    if (!res.ok) return; // thêm dòng này
+    if (!res.ok) return;
 
     const data = await res.json();
 
     if (data.spreadsheetUrl) {
       const container = document.getElementById("sheetLinkContainer");
+
       if (container) {
         container.innerHTML =
-          `<a href="${data.spreadsheetUrl}" target="_blank
+          `<a hrefspreadsheetUrl}📄 Mở Sheet</a>`;
+      }
     }
   } catch (e) {
     console.log(e);
