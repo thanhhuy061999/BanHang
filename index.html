@@ -704,7 +704,7 @@ window.submitRealOrder = async function(){
       saveCart();
       closeCart();
 
-      let msg = `🎉 Đặt hàng thành công! Mã đơn: ${data.order.orderId}.\nCửa hàng sẽ liên hệ qua SĐT ${phone} để giao hàng.`;
+      let msg = `Dat hang thanh cong! Ma don: ${data.order.orderId}. Cuahang se lien he qua SDT ${phone} de giao hang.`;
       if(sheetSaved && sheetUrl){
         msg += `\n\n✅ Đơn hàng đã được lưu tự động vào Google Sheets!`;
         if(confirm(msg + "\n\nBạn có muốn mở xem Google Sheets ngay không?")){
