@@ -22,7 +22,7 @@ let authChangeCallbacks = [];
 async function loadConfig() {
   if (firebaseConfig) return;
   try {
-    const res = await fetch('/firebase-applet-config.json');
+    const res = await fetch('/BanHang/firebase-applet-config.json');
     firebaseConfig = await res.json();
     app = initializeApp(firebaseConfig);
     auth = getAuth(app);
