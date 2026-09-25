@@ -331,7 +331,7 @@
       <div class="hero-box">
         <div class="hero-content">
           <div class="eyebrow">🌱 TƯƠI NGON • SẠCH • TIỆN LỢI</div>
-          <h1>Trái cây tươi,<br>ăn vặt vui mỗi ngày.</h1>
+          <h1>Trái cây tươi, ăn vặt vui mỗi ngày.</h1>
           <p>Chọn nhanh những loại trái cây mọng nước và món ăn vặt hấp dẫn. Đặt hàng đơn giản, giao tận nơi.</p>
           <div class="hero-actions">
             <a class="primary" href="/BanHang/#products">🛍️ Mua ngay</a>
@@ -698,24 +698,19 @@ window.submitRealOrder = async function(){
       })
     });
     const data = await res.json();
-
     if(data.success){
       cart = [];
       saveCart();
       closeCart();
-
-      let msg = `Dat hang thanh cong! Ma don: ${data.order.orderId}. Cuahang se lien he qua SDT ${phone} de giao hang.`;
-
+      let msg = 'Dat hang thanh cong! Ma don: ${data.order.orderId}. Cua hang se lien he qua SDT ${phone} de giao hang.';
       if(sheetSaved && sheetUrl){
-        msg += `\n\n✅ Đơn hàng đã được lưu tự động vào Google Sheets!`;
-
-        if(confirm(msg + "\n\nBạn có muốn mở xem Google Sheets ngay không?")){
+      msg += `\n\n✅ Đơn hàng đã được lưu tự động vào Google Sheets!`;
+      if(confirm(msg + "\n\nBạn có muốn mở xem Google Sheets ngay không?")){
           window.open(sheetUrl, "_blank");
         }
       } else {
         alert(msg);
       }
-
       showToast("Đặt hàng thành công! Cảm ơn bạn ❤️");
 } else {
       showToast("Lỗi: " + (data.error || "Không thể lưu đơn"));
@@ -728,7 +723,6 @@ window.submitRealOrder = async function(){
     btn.innerHTML = "🚀 Xác nhận Đặt hàng ngay";
   }
 };
-
 window.showToast = function(msg){
   const t=document.getElementById("toast");
   if(!t) return;
@@ -737,12 +731,10 @@ window.showToast = function(msg){
   clearTimeout(window.toastTimer);
   window.toastTimer=setTimeout(()=>t.classList.remove("show"),2400);
 };
-
 window.toggleMobileNav = function(){
   const nav=document.getElementById("mobileNav");
   if(nav) nav.classList.toggle("open");
 };
-
 let isPlaying=false;
 const audio=document.getElementById("bgMusic");
 window.toggleMusic = function(){
@@ -765,7 +757,6 @@ window.toggleMusic = function(){
     showToast("Đã tạm dừng nhạc ⏸");
   }
 };
-
 document.querySelectorAll(".cat").forEach(btn=>{
   btn.addEventListener("click",()=>{
     document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));
