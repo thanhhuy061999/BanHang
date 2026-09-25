@@ -1,0 +1,21 @@
+[
+  {
+    "orderId": "HF-031966",
+    "createdAt": "14:23:51 25/9/2026",
+    "customerName": "Nguyễn Thanh Huy",
+    "phone": "0365541099",
+    "address": "449 ấp tân an, Tân Nhuận Đông, Đồng Tháp",
+    "note": "Đơn hàng mẫu",
+    "paymentMethod": "COD",
+    "items": [
+      {
+        "name": "Dâu tây Đà Lạt",
+        "price": 89000,
+        "qty": 1
+      }
+    ],
+    "total": 89000,
+    "sheetSynced": false,
+    "status": "Mới tiếp nhận"
+  }
+]

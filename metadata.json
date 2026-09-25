@@ -1,0 +1,7 @@
+{
+  "name": "Huy Fruit & Snack",
+  "description": "Cửa hàng trực tuyến trái cây tươi và đồ ăn vặt",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

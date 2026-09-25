@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huy Fruit & Snack - Trái cây & Đồ ăn vặt</title>
+  <meta name="description" content="Cửa hàng trực tuyến trái cây tươi và đồ ăn vặt đóng gói tiện lợi">
+  <meta property="og:title" content="Huy Fruit & Snack - Trái cây & Đồ ăn vặt">
+  <meta property="og:description" content="Cửa hàng trực tuyến trái cây tươi và đồ ăn vặt đóng gói tiện lợi">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#2f8f46;
+      --green-dark:#176b30;
+      --green-soft:#eaf7ec;
+      --orange:#ff8a3d;
+      --yellow:#ffd65a;
+      --cream:#fffaf0;
+      --text:#243126;
+      --muted:#6d776f;
+      --white:#fff;
+      --shadow:0 12px 35px rgba(34,74,42,.10);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Be Vietnam Pro",sans-serif;
+      color:var(--text);
+      background:#fbfdf9;
+    }
+    button,input{font:inherit}
+    button{cursor:pointer}
+    a{text-decoration:none;color:inherit}
+    .topbar{
+      background:var(--green-dark);
+      color:#fff;
+      text-align:center;
+      padding:8px 15px;
+      font-size:13px;
+      font-weight:600;
+    }
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid #edf1ed;
+    }
+    .nav{
+      max-width:1180px;
+      margin:auto;
+      min-height:76px;
+      padding:0 20px;
+      display:flex;
+      align-items:center;
+      gap:28px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:max-content;
+      font-weight:800;
+      font-size:21px;
+      color:var(--green-dark);
+    }
+    .logo-icon{
+      width:42px;height:42px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,#76d47f,#2f8f46);
+      box-shadow:0 8px 18px rgba(47,143,70,.22);
+      font-size:23px;
+    }
+    .nav-links{display:flex;gap:22px;margin-left:auto}
+    .nav-links a{font-size:14px;font-weight:600;color:#536057}
+    .nav-links a:hover{color:var(--green)}
+    .cart-btn{
+      border:0;background:var(--green);color:#fff;
+      border-radius:14px;padding:11px 15px;font-weight:700;
+      display:flex;align-items:center;gap:8px;
+      box-shadow:0 7px 18px rgba(47,143,70,.2);
+    }
+    .cart-count{
+      min-width:22px;height:22px;border-radius:50%;
+      background:#fff;color:var(--green-dark);
+      display:grid;place-items:center;font-size:12px;
+    }
+    .hero{
+      max-width:1180px;margin:28px auto 0;padding:0 20px;
+    }
+    .hero-box{
+      min-height:390px;border-radius:32px;overflow:hidden;
+      position:relative;
+      background:
+        linear-gradient(90deg,rgba(19,79,32,.90),rgba(19,79,32,.42),rgba(19,79,32,.08)),
+        url("https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1800&q=85") center/cover;
+      display:flex;align-items:center;padding:55px;
+      box-shadow:var(--shadow);
+    }
+    .hero-content{max-width:560px;color:#fff}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:7px;
+      background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);
+      padding:7px 12px;border-radius:99px;font-size:12px;font-weight:700;
+      margin-bottom:15px;
+    }
+    h1{font-size:46px;line-height:1.12;margin:0 0 15px;letter-spacing:-1px}
+    .hero p{font-size:16px;line-height:1.7;opacity:.92;margin:0 0 24px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .primary,.secondary{
+      border:0;border-radius:13px;padding:13px 19px;font-weight:800;
+    }
+    .primary{background:var(--yellow);color:#4a3b00}
+    .secondary{background:#fff;color:var(--green-dark)}
+    .features{
+      max-width:1180px;margin:22px auto 0;padding:0 20px;
+      display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+    }
+    .feature{
+      background:#fff;border:1px solid #edf2ed;border-radius:18px;padding:17px;
+      display:flex;gap:12px;align-items:center;
+    }
+    .feature-icon{
+      width:43px;height:43px;border-radius:13px;background:var(--green-soft);
+      display:grid;place-items:center;font-size:21px;flex:none;
+    }
+    .feature strong{display:block;font-size:13px}.feature span{font-size:11px;color:var(--muted)}
+    .section{max-width:1180px;margin:54px auto 0;padding:0 20px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:20px}
+    .section-head h2{margin:0;font-size:28px;letter-spacing:-.5px}
+    .section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}
+    .categories{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+    .cat{
+      border:1px solid #e8eee9;background:#fff;border-radius:18px;padding:16px 10px;
+      text-align:center;transition:.2s;
+    }
+    .cat:hover,.cat.active{transform:translateY(-3px);border-color:#b9dfbf;box-shadow:0 8px 22px rgba(30,100,43,.08)}
+    .cat.active{background:var(--green-soft)}
+    .cat-icon{font-size:29px;display:block;margin-bottom:7px}
+    .cat span{font-size:12px;font-weight:700}
+    .toolbar{
+      margin:22px 0;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+    }
+    .search{
+      flex:1;min-width:230px;position:relative;
+    }
+    .search input{
+      width:100%;border:1px solid #e0e8e1;background:#fff;
+      padding:13px 16px 13px 43px;border-radius:14px;outline:none;
+    }
+    .search input:focus{border-color:#7bc486;box-shadow:0 0 0 4px #eaf7ec}
+    .search span{position:absolute;left:15px;top:12px}
+    .sort{
+      border:1px solid #e0e8e1;background:#fff;border-radius:14px;padding:12px 14px;color:#49554c;
+    }
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{
+      background:#fff;border:1px solid #edf1ed;border-radius:20px;overflow:hidden;
+      transition:.22s;position:relative;
+    }
+    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .product-img{height:190px;width:100%;object-fit:cover;display:block}
+    .badge{
+      position:absolute;top:12px;left:12px;background:#fff;border-radius:99px;
+      padding:6px 9px;font-size:10px;font-weight:800;color:var(--green-dark);
+      box-shadow:0 5px 12px rgba(0,0,0,.08);
+    }
+    .card-body{padding:15px}
+    .rating{font-size:11px;color:#e59a13;margin-bottom:6px}
+    .card h3{font-size:15px;margin:0 0 6px}
+    .desc{font-size:11px;color:var(--muted);min-height:34px}
+    .price-row{display:flex;justify-content:space-between;align-items:center;margin-top:13px}
+    .price{font-weight:800;color:var(--green-dark);font-size:16px}
+    .unit{font-size:10px;color:var(--muted);font-weight:500}
+    .add{
+      width:35px;height:35px;border-radius:11px;border:0;
+      background:var(--green-soft);color:var(--green-dark);font-size:20px;font-weight:800;
+    }
+    .add:hover{background:var(--green);color:#fff}
+    .empty{grid-column:1/-1;text-align:center;padding:35px;color:var(--muted)}
+    .deal{
+      margin-top:55px;border-radius:25px;padding:30px 35px;
+      background:linear-gradient(110deg,#fff0c4,#fff8e9);
+      display:flex;justify-content:space-between;align-items:center;gap:20px;
+      border:1px solid #f7e3ad;
+    }
+    .deal h2{margin:0 0 7px;font-size:25px}.deal p{margin:0;color:#716443;font-size:13px}
+    .deal .discount{font-size:34px;font-weight:900;color:#ef792f}
+    footer{margin-top:65px;background:#183b22;color:#dcebdd;padding:40px 20px}
+    .footer-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}
+    footer h3{color:#fff;margin:0 0 12px} footer p,footer a{font-size:12px;color:#c0d3c2;line-height:1.8}
+    .modal{
+      display:none;position:fixed;inset:0;background:rgba(12,25,15,.55);
+      z-index:100;align-items:flex-end;justify-content:flex-end;
+    }
+    .modal.open{display:flex}
+    .cart-panel{
+      width:min(480px,100%);height:100%;background:#fff;padding:25px;
+      box-shadow:-10px 0 40px rgba(0,0,0,.15);display:flex;flex-direction:column;overflow-y:auto;
+    }
+    .cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;padding-bottom:15px}
+    .close{border:0;background:#f2f5f2;width:35px;height:35px;border-radius:10px;font-weight:700}
+    .cart-items{flex:1;overflow:auto;padding:15px 0;max-height:210px}
+    .cart-item{display:grid;grid-template-columns:55px 1fr auto;gap:10px;align-items:center;margin-bottom:14px}
+    .cart-item img{width:55px;height:55px;border-radius:12px;object-fit:cover}
+    .cart-item strong{font-size:13px}.cart-item small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+    .qty{display:flex;align-items:center;gap:7px;margin-top:6px}.qty button{border:0;background:#edf5ee;width:22px;height:22px;border-radius:6px;font-weight:700}
+    .remove{border:0;background:none;color:#c94c4c;font-size:11px}
+    .cart-total{border-top:1px solid #eee;padding-top:14px}.total-line{display:flex;justify-content:space-between;font-size:17px;font-weight:800;margin-bottom:12px}
+    .checkout-form{
+      background:#f9fbf9;border:1px solid #e4ede5;border-radius:16px;padding:16px;margin-top:10px;
+    }
+    .checkout-form h3{margin:0 0 10px;font-size:14px;color:var(--green-dark);display:flex;justify-content:space-between;align-items:center}
+    .checkout-field{margin-bottom:10px}
+    .checkout-field label{display:block;font-size:12px;font-weight:700;margin-bottom:4px}
+    .checkout-field input, .checkout-field select, .checkout-field textarea{
+      width:100%;padding:9px 12px;border:1px solid #d4ded6;border-radius:10px;background:#fff;font-size:13px;outline:none;
+    }
+    .checkout-field input:focus, .checkout-field select:focus, .checkout-field textarea:focus{
+      border-color:var(--green);box-shadow:0 0 0 3px rgba(47,143,70,.12);
+    }
+    .checkout{width:100%;padding:14px;border:0;border-radius:13px;background:var(--green);color:#fff;font-weight:800;font-size:15px;margin-top:10px;box-shadow:0 7px 18px rgba(47,143,70,.22)}
+    .checkout:hover{background:var(--green-dark)}
+    .sheets-sync-status{
+      margin-top:10px;background:#eef7f0;border:1px solid #c2e5c8;border-radius:10px;
+      padding:9px 12px;font-size:11px;color:var(--green-dark);display:flex;align-items:center;justify-content:space-between;
+    }
+    .sheets-sync-status a{color:var(--green-dark);font-weight:800;text-decoration:underline}
+    .toast{
+      position:fixed;right:20px;bottom:20px;background:#183b22;color:#fff;padding:12px 16px;
+      border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(15px);pointer-events:none;transition:.25s;z-index:200;font-size:13px
+    }
+    .toast.show{opacity:1;transform:translateY(0)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .music-btn{
+      border:1px solid #e0e8e1;background:#fff;color:var(--green-dark);
+      border-radius:14px;padding:10px 14px;font-weight:700;font-size:13px;
+      display:flex;align-items:center;gap:7px;transition:all .2s;
+    }
+    .music-btn:hover{background:var(--green-soft);border-color:#b9dfbf}
+    .music-btn.playing{background:var(--green-soft);border-color:var(--green);color:var(--green)}
+    .music-icon{display:inline-block}
+    .music-btn.playing .music-icon{animation:pulseMusic 1s infinite alternate ease-in-out}
+    @keyframes pulseMusic{0%{transform:scale(1)}100%{transform:scale(1.2) rotate(10deg)}}
+    .mobile-menu-btn{
+      display:none;background:none;border:1px solid #ddd;border-radius:10px;padding:8px 12px;font-size:18px
+    }
+    .mobile-nav{
+      display:none;background:#fff;border-bottom:1px solid #edf1ed;padding:14px 20px;
+    }
+    .mobile-nav.open{display:flex;flex-direction:column;gap:10px}
+    .mobile-nav a{font-weight:600;font-size:14px;padding:7px 0;border-bottom:1px dashed #f0f0f0}
+    .about-teaser{
+      margin-top:55px;border-radius:28px;padding:36px;
+      background:#fff;border:1px solid #edf2ed;box-shadow:var(--shadow);
+      display:grid;grid-template-columns:1fr 180px;gap:30px;align-items:center;
+    }
+    .about-avt-card{text-align:center}
+    .about-avt-wrap{
+      width:130px;height:130px;border-radius:50%;padding:4px;
+      background:linear-gradient(135deg,#76d47f,#ff8a3d);margin:0 auto 10px;
+    }
+    .about-avt{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+    .about-role{display:inline-block;font-size:11px;font-weight:700;color:var(--orange);background:#fff4ec;padding:3px 10px;border-radius:99px}
+    .about-btn{
+      display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+      background:var(--green);color:#fff;padding:12px 20px;border-radius:12px;
+      font-weight:700;font-size:14px;box-shadow:0 6px 16px rgba(47,143,70,.22);
+    }
+    .about-btn:hover{background:var(--green-dark)}
+    @media(max-width:900px){
+      .nav-links{display:none}.mobile-menu-btn{display:block}
+      .about-teaser{grid-template-columns:1fr;text-align:center}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:600px){
+      .nav{padding:0 14px}.hero{padding:0 12px}.hero-box{padding:32px 24px;min-height:430px}
+      h1{font-size:34px}.features{padding:0 12px;grid-template-columns:1fr 1fr}
+      .section{padding:0 12px}.categories{grid-template-columns:repeat(3,1fr)}
+      .products{grid-template-columns:1fr 1fr;gap:11px}.product-img{height:150px}
+      .card-body{padding:11px}.card h3{font-size:13px}.desc{font-size:10px}
+      .deal{padding:22px;display:block}.deal .discount{margin-top:8px}
+      .footer-inner{grid-template-columns:1fr}.logo{font-size:17px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Background music -->
+  <audio id="bgMusic" src="/nhac.mp3" preload="auto" loop></audio>
+
+  <div class="topbar">🍊 FREESHIP đơn từ 199K • Trái cây tươi mỗi ngày • Đóng gói sạch đẹp</div>
+
+  <header>
+    <nav class="nav">
+      <a href="/" class="logo"><span class="logo-icon">🍊</span> Huy Fruit & Snack</a>
+      <div class="nav-links">
+        <a href="#home">Trang chủ</a>
+        <a href="#products">Sản phẩm</a>
+        <a href="#deal">Ưu đãi</a>
+        <a href="/gioi-thieu">Giới thiệu</a>
+        <a href="/lien-he">Liên hệ & Bản đồ</a>
+      </div>
+      <div class="nav-actions">
+        <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Bật/Tắt nhạc chill thư giãn">
+          <span class="music-icon">🎵</span>
+          <span id="musicBtnText">Nhạc chill</span>
+        </button>
+        <button class="cart-btn" onclick="openCart()">🛒 Giỏ hàng <span class="cart-count" id="cartCount">0</span></button>
+        <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#home" onclick="toggleMobileNav()">🏠 Trang chủ</a>
+      <a href="#products" onclick="toggleMobileNav()">🍎 Sản phẩm</a>
+      <a href="#categories" onclick="toggleMobileNav()">🍱 Danh mục</a>
+      <a href="#deal" onclick="toggleMobileNav()">🎉 Ưu đãi</a>
+      <a href="/gioi-thieu">📖 Giới thiệu</a>
+      <a href="/lien-he">📍 Liên hệ & Bản đồ</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-box">
+        <div class="hero-content">
+          <div class="eyebrow">🌱 TƯƠI NGON • SẠCH • TIỆN LỢI</div>
+          <h1>Trái cây tươi,<br>ăn vặt vui mỗi ngày.</h1>
+          <p>Chọn nhanh những loại trái cây mọng nước và món ăn vặt hấp dẫn. Đặt hàng đơn giản, giao tận nơi.</p>
+          <div class="hero-actions">
+            <a class="primary" href="#products">🛍️ Mua ngay</a>
+            <a class="secondary" href="#categories">Xem danh mục</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature"><div class="feature-icon">🍃</div><div><strong>Tươi mỗi ngày</strong><span>Ưu tiên sản phẩm mới</span></div></div>
+      <div class="feature"><div class="feature-icon">🚚</div><div><strong>Giao hàng nhanh</strong><span>Đóng gói cẩn thận</span></div></div>
+      <div class="feature"><div class="feature-icon">💚</div><div><strong>Giá hợp lý</strong><span>Nhiều combo tiết kiệm</span></div></div>
+      <div class="feature"><div class="feature-icon">📦</div><div><strong>Đóng gói sạch</strong><span>Tiện mang đi & làm quà</span></div></div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-head">
+        <div><h2>Danh mục</h2><p>Chọn món bạn đang thèm hôm nay 😋</p></div>
+      </div>
+      <div class="categories">
+        <button class="cat active" data-category="all"><span class="cat-icon">🍱</span><span>Tất cả</span></button>
+        <button class="cat" data-category="fruit"><span class="cat-icon">🍎</span><span>Trái cây</span></button>
+        <button class="cat" data-category="dried"><span class="cat-icon">🥭</span><span>Trái cây sấy</span></button>
+        <button class="cat" data-category="snack"><span class="cat-icon">🍿</span><span>Ăn vặt</span></button>
+        <button class="cat" data-category="drink"><span class="cat-icon">🥤</span><span>Đồ uống</span></button>
+        <button class="cat" data-category="combo"><span class="cat-icon">🎁</span><span>Combo</span></button>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <div><h2>Sản phẩm nổi bật</h2><p>Những món được yêu thích tại Huy Fruit & Snack</p></div>
+      </div>
+      <div class="toolbar">
+        <div class="search"><span>🔎</span><input id="search" type="text" placeholder="Tìm trái cây, đồ ăn vặt..."></div>
+        <select class="sort" id="sort">
+          <option value="default">Sắp xếp: Nổi bật</option>
+          <option value="low">Giá thấp → cao</option>
+          <option value="high">Giá cao → thấp</option>
+        </select>
+      </div>
+      <div class="products" id="productGrid"></div>
+
+      <div class="deal" id="deal">
+        <div><h2>🎉 Combo ăn vặt cuối tuần</h2><p>Chọn combo để tiết kiệm hơn khi mua nhiều món.</p></div>
+        <div class="discount">GIẢM 15%</div>
+      </div>
+
+      <!-- ABOUT TEASER SECTION -->
+      <section class="about-teaser" id="about">
+        <div>
+          <span style="font-size:12px;font-weight:700;color:var(--green);letter-spacing:1px;text-transform:uppercase;">🌱 VỀ CHÚNG TÔI</span>
+          <h2 style="margin:6px 0 12px;font-size:26px;color:var(--green-dark);">Câu chuyện thương hiệu Huy Fruit & Snack</h2>
+          <p style="margin:0 0 14px;color:#4a544d;font-size:14px;line-height:1.7;">
+            Bắt nguồn từ tình yêu với những vườn cây ăn trái sum suê trĩu quả của miền đất phù sa Đồng Tháp, Huy Fruit & Snack mang đến cho bạn nguồn hoa quả tươi sạch tuyển chọn cùng các món ăn vặt đóng gói thơm ngon, an tâm về chất lượng.
+          </p>
+          <a href="/gioi-thieu" class="about-btn">📖 Khám phá trang giới thiệu & sứ mệnh →</a>
+        </div>
+        <div class="about-avt-card">
+          <div class="about-avt-wrap">
+            <img src="/avt.jpg" alt="Nguyễn Thanh Huy - Founder" class="about-avt" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80'">
+          </div>
+          <strong style="display:block;font-size:15px;color:var(--green-dark);">Nguyễn Thanh Huy</strong>
+          <span class="about-role">Founder & Quản lý</span>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-inner">
+      <div><h3>🍊 Huy Fruit & Snack</h3><p>Trái cây tươi và đồ ăn vặt cho những ngày cần một chút ngọt ngào.</p><p>📍 449 Ấp Tân An, Tân Nhuận Đông, Đồng Tháp<br>📞 0365541099<br>✉️ thanhhuy061999@gmail.com</p></div>
+      <div><h3>Mua hàng</h3><p><a href="#products">Sản phẩm</a><br><a href="#categories">Danh mục</a><br><a href="#deal">Khuyến mãi</a><br><a href="/gioi-thieu">Trang giới thiệu</a><br><a href="/lien-he">Bản đồ & Cửa hàng</a></p></div>
+      <div><h3>Hỗ trợ</h3><p>🚚 Giao hàng tận nơi<br>💳 Thanh toán khi nhận hàng<br>📊 Tự động lưu đơn vào Google Sheets<br>💬 Hotline: 0365541099</p></div>
+    </div>
+  </footer>
+
+  <div class="modal" id="cartModal" onclick="if(event.target===this) closeCart()">
+    <aside class="cart-panel">
+      <div class="cart-head">
+        <h2>🛒 Giỏ hàng & Đặt hàng</h2>
+        <button class="close" onclick="closeCart()">✕</button>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-total">
+        <div class="total-line">
+          <span>Tạm tính</span>
+          <span id="cartTotal">0đ</span>
+        </div>
+      </div>
+
+      <!-- Real Order Checkout Form -->
+      <div class="checkout-form" id="checkoutFormBox">
+        <h3>
+          <span>📝 Thông tin giao hàng</span>
+          <small style="font-size:11px;color:var(--muted);font-weight:normal;">* Bắt buộc</small>
+        </h3>
+        
+        <div class="checkout-field">
+          <label>Họ và tên người nhận *</label>
+          <input type="text" id="orderName" placeholder="Ví dụ: Nguyễn Văn A" required>
+        </div>
+
+        <div class="checkout-field">
+          <label>Số điện thoại *</label>
+          <input type="tel" id="orderPhone" placeholder="Ví dụ: 0365541099" required pattern="[0-9]{9,11}">
+        </div>
+
+        <div class="checkout-field">
+          <label>Địa chỉ nhận hàng chi tiết *</label>
+          <textarea id="orderAddress" rows="2" placeholder="Số nhà, ấp/thôn, xã/phường, quận/huyện..." required></textarea>
+        </div>
+
+        <div class="checkout-field">
+          <label>Phương thức thanh toán</label>
+          <select id="orderPayment">
+            <option value="COD (Tiền mặt khi nhận hàng)">💵 Tiền mặt khi nhận hàng (COD)</option>
+            <option value="Chuyển khoản ngân hàng">🏦 Chuyển khoản ngân hàng</option>
+          </select>
+        </div>
+
+        <div class="checkout-field">
+          <label>Ghi chú đơn hàng (tuỳ chọn)</label>
+          <input type="text" id="orderNote" placeholder="Ví dụ: Giao giờ hành chính, gọi trước...">
+        </div>
+
+        <div class="sheets-sync-status" id="sheetsStatusNotice">
+          <span>📊 Tự động lưu đơn vào <strong>Google Sheets</strong></span>
+          <span id="sheetLinkContainer"></span>
+        </div>
+
+        <button class="checkout" id="btnPlaceOrder" onclick="submitRealOrder()">
+          🚀 Xác nhận Đặt hàng ngay
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+<script type="module">
+import { 
+  signInWithGoogle, 
+  getCachedToken, 
+  appendOrderToGoogleSheet, 
+  getOrCreateSpreadsheet 
+} from '/sheets-service.js';
+
+const products = [
+  {id:1,name:"Dâu tây Đà Lạt",price:89000,unit:"500g",category:"fruit",img:"https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=700&q=80",desc:"Dâu đỏ mọng, thơm và ngọt dịu.",badge:"Bán chạy"},
+  {id:2,name:"Xoài cát chín",price:59000,unit:"1kg",category:"fruit",img:"https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=700&q=80",desc:"Xoài chín vàng, thơm ngọt tự nhiên.",badge:"Tươi mới"},
+  {id:3,name:"Nho xanh không hạt",price:99000,unit:"500g",category:"fruit",img:"https://www.gianttiger.com/cdn/shop/files/preview_images_1563949_f_01.jpg?v=1767693995?auto=format&fit=crop&w=700&q=80",desc:"Nho giòn, mọng nước, dễ ăn.",badge:"Hot"},
+  {id:4,name:"Cam vàng mọng nước",price:65000,unit:"1kg",category:"fruit",img:"https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=700&q=80",desc:"Vị chua ngọt, nhiều nước.",badge:""},
+  {id:5,name:"Xoài sấy dẻo",price:45000,unit:"250g",category:"dried",img:"https://xoaisaydeoducphat.com/image/cache/catalog/san-pham/xoai-say-deo/14-400x400.png?auto=format&fit=crop&w=700&q=80",desc:"Mềm dẻo, thơm đậm vị xoài.",badge:"Bán chạy"},
+  {id:6,name:"Mít sấy giòn",price:39000,unit:"200g",category:"dried",img:"https://vietnam-porter.jp/html/upload/save_image/dala-200g-premium-crispy-thai-jackfruit-chips-da-lat-specialty-whole-segments-thick-sweetly-crunchy_69ba37a44e7a7.webp?auto=format&fit=crop&w=700&q=80",desc:"Giòn thơm, ăn vui miệng.",badge:""},
+  {id:7,name:"Khô gà lá chanh",price:55000,unit:"250g",category:"snack",img:"https://product.hstatic.net/200000486829/product/kho_ga_la_chanh_250g_c4fe220a4e7243278e5b9ab2a2186ecb.jpg?auto=format&fit=crop&w=700&q=80",desc:"Cay nhẹ, thơm lá chanh.",badge:"Hot"},
+  {id:8,name:"Bánh tráng bơ",price:30000,unit:"200g",category:"snack",img:"https://cdn.hstatic.net/products/200000483069/bestsaeller_e01bae04b0e64678b91bfcb940c5c105_1024x1024.png?auto=format&fit=crop&w=700&q=80",desc:"Béo thơm, đậm vị, ăn là ghiền.",badge:""},
+  {id:9,name:"Trà đào cam sả",price:35000,unit:"Chai 500ml",category:"drink",img:"https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=80",desc:"Thanh mát, thơm nhẹ vị đào.",badge:""},
+  {id:10,name:"Nước ép cam",price:32000,unit:"Chai 500ml",category:"drink",img:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=80",desc:"Ép từ cam tươi, không quá ngọt.",badge:"Tươi"},
+  {id:11,name:"Combo trái cây + snack",price:149000,unit:"1 combo",category:"combo",img:"https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=700&q=80",desc:"Combo tiện lợi cho 2–3 người.",badge:"-15%"},
+  {id:12,name:"Combo ăn vặt chill",price:129000,unit:"1 combo",category:"combo",img:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80",desc:"Nhiều món ngon cho buổi xem phim.",badge:"Tiết kiệm"}
+];
+
+let cart = JSON.parse(localStorage.getItem("huyCart") || "[]");
+let currentCategory = "all";
+
+const money = n => n.toLocaleString("vi-VN") + "đ";
+
+function renderProducts(){
+  const q = document.getElementById("search").value.toLowerCase().trim();
+  const sort = document.getElementById("sort").value;
+  let list = products.filter(p => (currentCategory==="all" || p.category===currentCategory) && p.name.toLowerCase().includes(q));
+  if(sort==="low") list.sort((a,b)=>a.price-b.price);
+  if(sort==="high") list.sort((a,b)=>b.price-a.price);
+  const grid = document.getElementById("productGrid");
+  if(!list.length){grid.innerHTML='<div class="empty">Không tìm thấy sản phẩm phù hợp 😢</div>';return}
+  grid.innerHTML = list.map(p => `
+    <article class="card">
+      ${p.badge ? `<span class="badge">${p.badge}</span>` : ""}
+      <img class="product-img" src="${p.img}" alt="${p.name}" loading="lazy">
+      <div class="card-body">
+        <div class="rating">★★★★★ <span style="color:#89928c">(4.9)</span></div>
+        <h3>${p.name}</h3>
+        <div class="desc">${p.desc}</div>
+        <div class="price-row">
+          <div><span class="price">${money(p.price)}</span> <span class="unit">/ ${p.unit}</span></div>
+          <button class="add" onclick="addToCart(${p.id})">+</button>
+        </div>
+      </div>
+    </article>`).join("");
+}
+
+window.addToCart = function(id){
+  const item = cart.find(x=>x.id===id);
+  if(item) item.qty++;
+  else cart.push({id,qty:1});
+  saveCart(); renderCart(); showToast("Đã thêm vào giỏ hàng 🛒");
+};
+
+window.changeQty = function(id,delta){
+  const item=cart.find(x=>x.id===id);
+  if(!item)return;
+  item.qty+=delta;
+  if(item.qty<=0)cart=cart.filter(x=>x.id!==id);
+  saveCart();renderCart();
+};
+
+window.removeItem = function(id){
+  cart=cart.filter(x=>x.id!==id);saveCart();renderCart();
+};
+
+function saveCart(){localStorage.setItem("huyCart",JSON.stringify(cart))}
+
+function renderCart(){
+  const box=document.getElementById("cartItems");
+  document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0);
+  const checkoutBox = document.getElementById("checkoutFormBox");
+  const btn = document.getElementById("btnPlaceOrder");
+
+  if(!cart.length){
+    box.innerHTML='<div class="empty">Giỏ hàng đang trống kìa mua hàng đi chời 🍊<br><small>Thêm nhiều món ngon vào nhé!</small></div>';
+    document.getElementById("cartTotal").textContent="0đ";
+    if (checkoutBox) checkoutBox.style.opacity = "0.5";
+    if (btn) btn.disabled = true;
+    return;
+  }
+  if (checkoutBox) checkoutBox.style.opacity = "1";
+  if (btn) btn.disabled = false;
+
+  let total=0;
+  box.innerHTML=cart.map(x=>{
+    const p=products.find(p=>p.id===x.id) || {name:"Món ngon", price:0, unit:"phần", img:""}; 
+    total+=p.price*x.qty;
+    return `<div class="cart-item">
+      <img src="${p.img}" alt="${p.name}">
+      <div><strong>${p.name}</strong><small>${money(p.price)} / ${p.unit}</small>
+      <div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><b>${x.qty}</b><button onclick="changeQty(${p.id},1)">+</button></div></div>
+      <button class="remove" onclick="removeItem(${p.id})">Xóa</button>
+    </div>`;
+  }).join("");
+  document.getElementById("cartTotal").textContent=money(total);
+}
+
+window.openCart = function(){
+  document.getElementById("cartModal").classList.add("open");
+  renderCart();
+};
+window.closeCart = function(){
+  document.getElementById("cartModal").classList.remove("open");
+};
+
+// Check if spreadsheet link is already configured
+async function checkSheetConfig() {
+  try {
+    const res = await fetch('/api/sheets-config');
+    const data = await res.json();
+    if (data.spreadsheetUrl) {
+      const container = document.getElementById("sheetLinkContainer");
+      if (container) {
+        container.innerHTML = `<a href="${data.spreadsheetUrl}" target="_blank" rel="noopener noreferrer">📄 Mở Sheet</a>`;
+      }
+    }
+  } catch(e){}
+}
+checkSheetConfig();
+
+// REAL ORDER SUBMISSION WITH GOOGLE SHEETS
+window.submitRealOrder = async function(){
+  if(!cart.length){
+    showToast("Giỏ hàng đang trống 😅");
+    return;
+  }
+
+  const name = document.getElementById("orderName").value.trim();
+  const phone = document.getElementById("orderPhone").value.trim();
+  const address = document.getElementById("orderAddress").value.trim();
+  const payment = document.getElementById("orderPayment").value;
+  const note = document.getElementById("orderNote").value.trim();
+
+  if(!name){
+    showToast("Vui lòng nhập Họ và tên!");
+    document.getElementById("orderName").focus();
+    return;
+  }
+  if(!phone || phone.length < 9){
+    showToast("Vui lòng nhập Số điện thoại hợp lệ!");
+    document.getElementById("orderPhone").focus();
+    return;
+  }
+  if(!address){
+    showToast("Vui lòng nhập Địa chỉ giao hàng!");
+    document.getElementById("orderAddress").focus();
+    return;
+  }
+
+  const orderItems = cart.map(x=>{
+    const p = products.find(prod=>prod.id===x.id) || {name:"Món ngon", price:0};
+    return { id:x.id, name: p.name, price: p.price, qty: x.qty };
+  });
+  const total = orderItems.reduce((sum, it)=>sum + (it.price*it.qty), 0);
+
+  const btn = document.getElementById("btnPlaceOrder");
+  btn.disabled = true;
+  btn.innerHTML = "⏳ Đang ghi nhận & lưu đơn...";
+
+  let sheetSaved = false;
+  let sheetUrl = null;
+
+  // 1. Check or request Google token for direct Sheets sync
+  let token = getCachedToken();
+  if(!token) {
+    try {
+      const wantSignIn = confirm("Bạn có muốn đăng nhập Google để tự động lưu trực tiếp đơn hàng này vào Google Sheets không?");
+      if(wantSignIn){
+        const authRes = await signInWithGoogle();
+        token = authRes?.accessToken;
+      }
+    } catch(e){
+      console.warn("Bỏ qua đăng nhập Google, lưu đơn vào sổ đơn hàng máy chủ.");
+    }
+  }
+
+  if(token){
+    try {
+      const sheetResult = await appendOrderToGoogleSheet({
+        customerName: name,
+        phone,
+        address,
+        paymentMethod: payment,
+        note,
+        items: orderItems,
+        total
+      }, token);
+      sheetSaved = true;
+      sheetUrl = sheetResult.spreadsheetUrl;
+    } catch(err){
+      console.error("Lỗi đồng bộ Google Sheets:", err);
+    }
+  }
+
+  // 2. Save order to backend /api/orders
+  try {
+    const res = await fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        customerName: name,
+        phone,
+        address,
+        paymentMethod: payment,
+        note,
+        items: orderItems,
+        total,
+        sheetSynced: sheetSaved
+      })
+    });
+    const data = await res.json();
+
+    if(data.success){
+      cart = [];
+      saveCart();
+      closeCart();
+
+      let msg = `🎉 Đặt hàng thành công! Mã đơn: ${data.order.orderId}.\nCửa hàng sẽ liên hệ qua SĐT ${phone} để giao hàng.`;
+      if(sheetSaved && sheetUrl){
+        msg += `\n\n✅ Đơn hàng đã được lưu tự động vào Google Sheets!`;
+        if(confirm(msg + "\n\nBạn có muốn mở xem Google Sheets ngay không?")){
+          window.open(sheetUrl, "_blank");
+        }
+      } else {
+        alert(msg);
+      }
+      showToast("Đặt hàng thành công! Cảm ơn bạn ❤️");
+    } else {
+      showToast("Lỗi: " + (data.error || "Không thể lưu đơn"));
+    }
+  } catch(err){
+    console.error("Lỗi đặt hàng:", err);
+    showToast("Lỗi kết nối máy chủ khi lưu đơn.");
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = "🚀 Xác nhận Đặt hàng ngay";
+  }
+};
+
+window.showToast = function(msg){
+  const t=document.getElementById("toast");
+  if(!t) return;
+  t.textContent=msg;
+  t.classList.add("show");
+  clearTimeout(window.toastTimer);
+  window.toastTimer=setTimeout(()=>t.classList.remove("show"),2400);
+};
+
+window.toggleMobileNav = function(){
+  const nav=document.getElementById("mobileNav");
+  if(nav) nav.classList.toggle("open");
+};
+
+let isPlaying=false;
+const audio=document.getElementById("bgMusic");
+window.toggleMusic = function(){
+  const btn=document.getElementById("musicBtn");
+  const text=document.getElementById("musicBtnText");
+  if(!isPlaying){
+    audio.play().then(()=>{
+      isPlaying=true;
+      btn.classList.add("playing");
+      text.textContent="Đang phát 🎵";
+      showToast("Đang phát nhạc thư giãn 🎵");
+    }).catch(e=>{
+      showToast("Vui lòng chạm vào màn hình để nghe nhạc 🎶");
+    });
+  } else {
+    audio.pause();
+    isPlaying=false;
+    btn.classList.remove("playing");
+    text.textContent="Nhạc chill";
+    showToast("Đã tạm dừng nhạc ⏸");
+  }
+};
+
+document.querySelectorAll(".cat").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");currentCategory=btn.dataset.category;renderProducts();
+  });
+});
+document.getElementById("search").addEventListener("input",renderProducts);
+document.getElementById("sort").addEventListener("change",renderProducts);
+renderProducts();renderCart();
+</script>
+</body>
+</html>

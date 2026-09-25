@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu - Huy Fruit & Snack | Trái cây tươi & Đồ ăn vặt</title>
+  <meta name="description" content="Tìm hiểu về câu chuyện thương hiệu, sứ mệnh và cam kết chất lượng của Huy Fruit & Snack - Nông sản tươi ngon từ Đồng Tháp.">
+  <meta property="og:title" content="Giới thiệu - Huy Fruit & Snack">
+  <meta property="og:description" content="Câu chuyện thương hiệu, sứ mệnh và cam kết chất lượng từ Huy Fruit & Snack.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #2f8f46;
+      --green-dark: #176b30;
+      --green-soft: #eaf7ec;
+      --orange: #ff8a3d;
+      --yellow: #ffd65a;
+      --cream: #fffaf0;
+      --text: #243126;
+      --muted: #6d776f;
+      --white: #fff;
+      --shadow: 0 12px 35px rgba(34,74,42,.10);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Be Vietnam Pro", sans-serif;
+      color: var(--text);
+      background: #fbfdf9;
+      line-height: 1.6;
+    }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { text-decoration: none; color: inherit; }
+
+    .topbar {
+      background: var(--green-dark);
+      color: #fff;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #edf1ed;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      min-height: 76px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: max-content;
+      font-weight: 800;
+      font-size: 21px;
+      color: var(--green-dark);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #76d47f, #2f8f46);
+      box-shadow: 0 8px 18px rgba(47,143,70,.22);
+      font-size: 23px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      margin-left: auto;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #536057;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--green);
+    }
+
+    .nav-links a.active {
+      font-weight: 800;
+      position: relative;
+    }
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .music-btn {
+      border: 1px solid #e0e8e1;
+      background: #fff;
+      color: var(--green-dark);
+      border-radius: 14px;
+      padding: 10px 14px;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .2s;
+    }
+    .music-btn:hover {
+      background: var(--green-soft);
+      border-color: #b9dfbf;
+    }
+    .music-btn.playing {
+      background: var(--green-soft);
+      border-color: var(--green);
+      color: var(--green);
+    }
+    .music-icon {
+      display: inline-block;
+    }
+    .music-btn.playing .music-icon {
+      animation: pulseMusic 1s infinite alternate ease-in-out;
+    }
+    @keyframes pulseMusic {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.18) rotate(10deg); }
+    }
+
+    .cart-btn {
+      border: 0;
+      background: var(--green);
+      color: #fff;
+      border-radius: 14px;
+      padding: 11px 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 7px 18px rgba(47,143,70,.2);
+      transition: transform .15s;
+    }
+    .cart-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .cart-count {
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--green-dark);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 18px;
+    }
+
+    .breadcrumb-wrap {
+      max-width: 1180px;
+      margin: 18px auto 0;
+      padding: 0 20px;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .breadcrumb a {
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    .about-hero {
+      max-width: 1180px;
+      margin: 20px auto 0;
+      padding: 0 20px;
+    }
+    .about-hero-box {
+      border-radius: 32px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, rgba(23,107,48,.95), rgba(47,143,70,.88)),
+                  url("https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1800&q=85") center/cover;
+      color: #fff;
+      padding: 60px 45px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.3);
+      padding: 7px 14px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .about-hero h1 {
+      font-size: 40px;
+      line-height: 1.15;
+      margin: 0 0 16px;
+      letter-spacing: -1px;
+    }
+    .about-hero p {
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: .95;
+      margin: 0 0 25px;
+    }
+
+    .hero-founder-card {
+      background: rgba(255,255,255,.96);
+      color: var(--text);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: 0 20px 45px rgba(0,0,0,.22);
+      text-align: center;
+    }
+    .founder-avt-wrap {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, #76d47f, #ff8a3d);
+      box-shadow: 0 10px 25px rgba(47,143,70,.25);
+    }
+    .founder-avt {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #edf2ed;
+    }
+    .hero-founder-card h3 {
+      margin: 0 0 4px;
+      font-size: 20px;
+      color: var(--green-dark);
+      font-weight: 800;
+    }
+    .founder-role {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--orange);
+      background: #fff4ec;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-bottom: 12px;
+    }
+    .founder-quote {
+      font-size: 13px;
+      font-style: italic;
+      color: #4f5a51;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .founder-contacts {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      font-size: 12px;
+      flex-wrap: wrap;
+    }
+    .founder-pill {
+      background: var(--green-soft);
+      color: var(--green-dark);
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .chill-bar {
+      max-width: 1180px;
+      margin: 32px auto 0;
+      padding: 0 20px;
+    }
+    .chill-box {
+      background: linear-gradient(110deg, #eef9f0, #fff7eb);
+      border: 1px solid #d4ecd8;
+      border-radius: 22px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .chill-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .chill-disc {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      box-shadow: 0 6px 18px rgba(47,143,70,.25);
+    }
+    .chill-disc.rotating {
+      animation: spinDisc 4s linear infinite;
+    }
+    @keyframes spinDisc {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .chill-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+    .chill-desc {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .chill-play-btn {
+      background: var(--green);
+      color: #fff;
+      border: 0;
+      border-radius: 12px;
+      padding: 10px 18px;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stats-section {
+      max-width: 1180px;
+      margin: 32px auto 0;
+      padding: 0 20px;
+    }
+    .stats-grid {
+      background: #fff;
+      border: 1px solid #edf2ed;
+      border-radius: 24px;
+      padding: 26px 30px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      box-shadow: var(--shadow);
+    }
+    .stat-item {
+      text-align: center;
+      border-right: 1px solid #edf2ed;
+      padding: 0 10px;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: 60px auto 0;
+      padding: 0 20px;
+    }
+    .section-title {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 36px;
+    }
+    .section-title h2 {
+      font-size: 30px;
+      margin: 0 0 10px;
+      color: var(--green-dark);
+    }
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .story-card {
+      background: #fff;
+      border: 1px solid #edf1ed;
+      border-radius: 26px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+    .story-card h3 {
+      font-size: 22px;
+      color: var(--green-dark);
+      margin: 0 0 16px;
+    }
+    .story-card p {
+      color: #4a544d;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .story-img-main {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      display: block;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .value-card {
+      background: #fff;
+      border: 1px solid #edf1ed;
+      border-radius: 22px;
+      padding: 26px 20px;
+      transition: transform .2s;
+    }
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+    .value-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: var(--green-soft);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .value-card h4 {
+      font-size: 16px;
+      margin: 0 0 8px;
+      color: var(--green-dark);
+    }
+    .value-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .btn-cta-primary {
+      background: var(--yellow);
+      color: #4a3b00;
+      font-weight: 800;
+      padding: 13px 24px;
+      border-radius: 13px;
+      border: 0;
+      font-size: 14px;
+      display: inline-block;
+    }
+    .btn-cta-secondary {
+      background: rgba(255,255,255,.2);
+      border: 1px solid rgba(255,255,255,.4);
+      color: #fff;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 13px;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    footer {
+      margin-top: 75px;
+      background: #183b22;
+      color: #dcebdd;
+      padding: 45px 20px 30px;
+    }
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 35px;
+    }
+    footer h3 { color: #fff; margin: 0 0 14px; font-size: 17px; }
+    footer p, footer a { font-size: 13px; color: #c0d3c2; line-height: 1.8; }
+    .footer-bottom {
+      max-width: 1180px;
+      margin: 30px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #8da490;
+    }
+
+    /* Modal Cart & Real Checkout */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(12,25,15,.55);
+      z-index: 100;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+    .modal.open { display: flex; }
+    .cart-panel {
+      width: min(480px, 100%);
+      height: 100%;
+      background: #fff;
+      padding: 25px;
+      box-shadow: -10px 0 40px rgba(0,0,0,.15);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .cart-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+    .cart-head h2 { margin: 0; font-size: 19px; }
+    .close {
+      border: 0;
+      background: #f2f5f2;
+      width: 35px;
+      height: 35px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px 0;
+      max-height: 200px;
+    }
+    .cart-item {
+      display: grid;
+      grid-template-columns: 50px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .cart-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .cart-item strong { font-size: 13px; }
+    .cart-item small { display: block; color: var(--muted); font-size: 11px; }
+    .qty { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+    .qty button {
+      border: 0;
+      background: #edf5ee;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .remove { border: 0; background: none; color: #c94c4c; font-size: 11px; }
+    .cart-total { border-top: 1px solid #eee; padding-top: 14px; }
+    .total-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .checkout-form {
+      background: #f9fbf9;
+      border: 1px solid #e5eee6;
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 10px;
+    }
+    .checkout-form h3 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .checkout-field { margin-bottom: 10px; }
+    .checkout-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .checkout-field input, .checkout-field select, .checkout-field textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid #d4ded6;
+      border-radius: 10px;
+      background: #fff;
+      font-size: 13px;
+      outline: none;
+    }
+    .checkout-btn {
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 13px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      margin-top: 10px;
+      box-shadow: 0 7px 18px rgba(47,143,70,.22);
+    }
+    .checkout-btn:hover { background: var(--green-dark); }
+    .sheets-sync-status {
+      margin-top: 10px;
+      background: #eef7f0;
+      border: 1px solid #c2e5c8;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 11px;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sheets-sync-status a {
+      color: var(--green-dark);
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #183b22;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(15px);
+      pointer-events: none;
+      transition: .25s;
+      z-index: 200;
+      font-size: 13px;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    .mobile-nav {
+      display: none;
+      background: #fff;
+      border-bottom: 1px solid #edf1ed;
+      padding: 14px 20px;
+    }
+    .mobile-nav.open { display: flex; flex-direction: column; gap: 10px; }
+    .mobile-nav a { font-weight: 600; font-size: 14px; padding: 7px 0; border-bottom: 1px dashed #f0f0f0; }
+
+    @media(max-width: 960px) {
+      .about-hero-box { grid-template-columns: 1fr; padding: 36px 20px; }
+      .story-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .stat-item:nth-child(2) { border-right: none; }
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width: 600px) {
+      .about-hero h1 { font-size: 28px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; padding: 15px 10px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgMusic" src="/nhac.mp3" preload="auto" loop></audio>
+
+  <div class="topbar">🍊 FREESHIP đơn từ 199K • Trái cây tươi mỗi ngày • Đóng gói sạch đẹp</div>
+
+  <header>
+    <nav class="nav">
+      <a href="/" class="logo">
+        <span class="logo-icon">🍊</span>
+        <span>Huy Fruit & Snack</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/">Trang chủ</a>
+        <a href="/#products">Sản phẩm</a>
+        <a href="/#deal">Ưu đãi</a>
+        <a href="/gioi-thieu" class="active">Giới thiệu</a>
+        <a href="/lien-he">Liên hệ & Bản đồ</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Bật/Tắt nhạc chill thư giãn">
+          <span class="music-icon">🎵</span>
+          <span id="musicBtnText">Nhạc chill</span>
+        </button>
+        <button class="cart-btn" onclick="openCart()">
+          🛒 Giỏ hàng
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/" onclick="toggleMobileNav()">🏠 Trang chủ</a>
+      <a href="/#products" onclick="toggleMobileNav()">🍎 Sản phẩm</a>
+      <a href="/#categories" onclick="toggleMobileNav()">🍱 Danh mục</a>
+      <a href="/#deal" onclick="toggleMobileNav()">🎉 Ưu đãi</a>
+      <a href="/gioi-thieu" class="active">📖 Giới thiệu</a>
+      <a href="/lien-he" onclick="toggleMobileNav()">📍 Liên hệ & Bản đồ</a>
+    </div>
+  </header>
+
+  <div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+      <a href="/">Trang chủ</a>
+      <span>/</span>
+      <span>Giới thiệu Huy Fruit & Snack</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="about-hero">
+      <div class="about-hero-box">
+        <div>
+          <div class="eyebrow">🌱 HƯƠNG VỊ ĐỒNG THÁP • TRÁI CÂY TƯƠI SẠCH</div>
+          <h1>Gửi gắm tình yêu quê hương qua từng thức quả ngọt lành</h1>
+          <p>
+            Chào mừng bạn đến với <strong>Huy Fruit & Snack</strong>! Chúng tôi mang đến nguồn hoa quả chín mọng tự nhiên, tuyển chọn mỗi sáng cùng đa dạng món ăn vặt tiện lợi, tươi ngon và đảm bảo an toàn vệ sinh cho bạn cùng gia đình.
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="/#products" class="btn-cta-primary">🛍️ Khám phá sản phẩm</a>
+            <a href="#story" class="btn-cta-secondary">📖 Đọc câu chuyện</a>
+          </div>
+        </div>
+
+        <div class="hero-founder-card">
+          <div class="founder-avt-wrap">
+            <img src="/avt.jpg" alt="Thanh Huy - Founder Huy Fruit & Snack" class="founder-avt" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80'">
+          </div>
+          <h3>Nguyễn Thanh Huy</h3>
+          <span class="founder-role">Người sáng lập & Quản lý</span>
+          <p class="founder-quote">
+            "Xuất thân từ xứ sở phù sa ngọt lành Đồng Tháp, tôi luôn mong muốn mang những hoa trái miệt vườn tươi rói nhất và đồ ăn vặt đóng gói sạch sẽ đến với từng khách hàng thân thương."
+          </p>
+          <div class="founder-contacts">
+            <span class="founder-pill">📍 449 Ấp Tân An, Tân Nhuận Đông, Đồng Tháp</span>
+            <span class="founder-pill">📞 0365541099</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chill Music Bar -->
+    <section class="chill-bar">
+      <div class="chill-box">
+        <div class="chill-info">
+          <div class="chill-disc" id="chillDisc">🎶</div>
+          <div>
+            <div class="chill-title">Giai điệu thư giãn cùng Huy Fruit & Snack</div>
+            <div class="chill-desc">Bật một chút nhạc êm dịu trong lúc dạo quanh cửa hàng và chọn món ngon nhé!</div>
+          </div>
+        </div>
+        <div>
+          <button class="chill-play-btn" id="chillPlayBtn" onclick="toggleMusic()">
+            <span id="chillPlayIcon">▶</span>
+            <span id="chillPlayLabel">Phát nhạc chill</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Trái cây sạch, nguồn gốc rõ ràng</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">15.000+</div>
+          <div class="stat-label">Đơn hàng trao tận tay khách hàng</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4.9 ★</div>
+          <div class="stat-label">Đánh giá hài lòng từ khách hàng</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24h</div>
+          <div class="stat-label">Giao hàng nhanh & Đổi trả linh hoạt</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section" id="story">
+      <div class="section-title">
+        <h2>Câu Chuyện Thương Hiệu</h2>
+        <p>Hành trình từ vườn cây trái miền Tây sông nước đến từng bàn trà, góc làm việc và bữa ăn vặt vui vẻ của bạn.</p>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-card">
+          <h3>🍊 Bắt nguồn từ niềm tự hào quê hương Đồng Tháp</h3>
+          <p>
+            Đồng Tháp từ lâu đã nổi tiếng là vùng đất trù phú với những vườn xoài cát trĩu quả, cam sành ngọt nước, nhãn sum suê dọc đôi bờ sông Tiền màu mỡ. Lớn lên cùng vị ngọt thanh khiết của hoa trái miệt vườn, <strong>Thanh Huy</strong> luôn ấp ủ ước mơ đưa những thức quà quê chất lượng này đến gần hơn với mọi người ở khắp mọi nơi.
+          </p>
+          <p>
+            Cửa hàng chính thức tọa lạc tại <strong>449 Ấp Tân An, Xã Tân Nhuận Đông, Châu Thành, Đồng Tháp</strong>. Không chỉ dừng lại ở trái cây tươi hái tại vườn, cửa hàng còn mở rộng tuyển chọn những món ăn vặt đóng gói tiện lợi, thơm ngon như trái cây sấy dẻo, khô gà lá chanh giòn rụm, bánh tráng bơ thơm nức và những thức uống giải nhiệt thanh mát.
+          </p>
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="Vườn trái cây tươi ngon" class="story-img-main">
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section">
+      <div class="section-title">
+        <h2>4 Cam Kết Vàng</h2>
+        <p>Nỗ lực mang đến trải nghiệm an tâm và trọn vẹn nhất cho từng khách hàng</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🍃</div>
+          <h4>Tươi Mới Mỗi Ngày</h4>
+          <p>Hoa quả nhập mới liên tục mỗi buổi sáng, loại bỏ quả dập hay chưa chín tới. Đảm bảo độ ngọt giòn tự nhiên.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🧼</div>
+          <h4>Đóng Gói Sạch Đẹp</h4>
+          <p>Tất cả sản phẩm đều được sơ chế sạch sẽ, đóng hộp hoặc túi zip kín khí, tiện lợi dùng ngay hoặc mang đi làm, đi học.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h4>Giao Hàng Thần Tốc</h4>
+          <p>Đóng gói cẩn thận bằng lớp chống sốc chuyên dụng, bảo quản nhiệt độ phù hợp để trái cây luôn mọng nước khi đến tay bạn.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h4>Đổi Trả 1-1 Linh Hoạt</h4>
+          <p>Nếu sản phẩm không đúng mô tả, bị dập nát do vận chuyển hay không làm bạn hài lòng, chúng tôi hoàn tiền hoặc đổi mới ngay.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-inner">
+      <div>
+        <h3>🍊 Huy Fruit & Snack</h3>
+        <p>Trái cây tươi và đồ ăn vặt cho những ngày cần một chút ngọt ngào.</p>
+        <p>
+          📍 Địa chỉ: <strong>449 Ấp Tân An, Tân Nhuận Đông, Đồng Tháp</strong><br>
+          📞 Hotline / Zalo: <strong>0365541099</strong><br>
+          ✉️ Email: <strong>thanhhuy061999@gmail.com</strong>
+        </p>
+      </div>
+      <div>
+        <h3>Liên kết nhanh</h3>
+        <p>
+          <a href="/">Trang chủ</a><br>
+          <a href="/#products">Sản phẩm nổi bật</a><br>
+          <a href="/#deal">Ưu đãi giảm giá</a><br>
+          <a href="/gioi-thieu">Về chúng tôi</a><br>
+          <a href="/lien-he">Liên hệ & Bản đồ</a>
+        </p>
+      </div>
+      <div>
+        <h3>Chính sách & Hỗ trợ</h3>
+        <p>
+          🚚 Giao hàng tận nơi toàn quốc<br>
+          💳 Thanh toán khi nhận hàng (COD)<br>
+          📊 Tự động lưu đơn vào Google Sheets<br>
+          🔄 Đổi trả 1-1 nếu hàng hỏng dập
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Huy Fruit & Snack. Bản quyền thuộc về Nguyễn Thanh Huy.</div>
+      <div>Nông sản sạch từ xứ sở Đồng Tháp Mười 🌱</div>
+    </div>
+  </footer>
+
+  <!-- Cart Modal & Real Checkout -->
+  <div class="modal" id="cartModal" onclick="if(event.target===this) closeCart()">
+    <aside class="cart-panel">
+      <div class="cart-head">
+        <h2>🛒 Giỏ hàng & Đặt hàng</h2>
+        <button class="close" onclick="closeCart()">✕</button>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-total">
+        <div class="total-line">
+          <span>Tạm tính</span>
+          <span id="cartTotal">0đ</span>
+        </div>
+      </div>
+
+      <div class="checkout-form" id="checkoutFormBox">
+        <h3>
+          <span>📝 Thông tin giao hàng</span>
+          <small style="font-size:11px;color:var(--muted);font-weight:normal;">* Bắt buộc</small>
+        </h3>
+        
+        <div class="checkout-field">
+          <label>Họ và tên *</label>
+          <input type="text" id="orderName" placeholder="Ví dụ: Nguyễn Văn A" required>
+        </div>
+
+        <div class="checkout-field">
+          <label>Số điện thoại *</label>
+          <input type="tel" id="orderPhone" placeholder="Ví dụ: 0365541099" required pattern="[0-9]{9,11}">
+        </div>
+
+        <div class="checkout-field">
+          <label>Địa chỉ nhận hàng chi tiết *</label>
+          <textarea id="orderAddress" rows="2" placeholder="Số nhà, ấp/thôn, xã/phường, quận/huyện..." required></textarea>
+        </div>
+
+        <div class="checkout-field">
+          <label>Phương thức thanh toán</label>
+          <select id="orderPayment">
+            <option value="COD (Tiền mặt khi nhận hàng)">💵 Tiền mặt khi nhận hàng (COD)</option>
+            <option value="Chuyển khoản ngân hàng">🏦 Chuyển khoản ngân hàng</option>
+          </select>
+        </div>
+
+        <div class="checkout-field">
+          <label>Ghi chú đơn hàng</label>
+          <input type="text" id="orderNote" placeholder="Ví dụ: Giao giờ hành chính, gọi trước...">
+        </div>
+
+        <div class="sheets-sync-status" id="sheetsStatusNotice">
+          <span>📊 Tự động lưu đơn vào <strong>Google Sheets</strong></span>
+          <span id="sheetLinkContainer"></span>
+        </div>
+
+        <button class="checkout-btn" id="btnPlaceOrder" onclick="submitRealOrder()">
+          🚀 Xác nhận Đặt hàng ngay
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script type="module">
+    import { 
+      signInWithGoogle, 
+      getCachedToken, 
+      appendOrderToGoogleSheet 
+    } from '/sheets-service.js';
+
+    const products = [
+      {id:1,name:"Dâu tây Đà Lạt",price:89000,unit:"500g",category:"fruit",img:"https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=700&q=80"},
+      {id:2,name:"Xoài cát chín",price:59000,unit:"1kg",category:"fruit",img:"https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=700&q=80"},
+      {id:3,name:"Nho xanh không hạt",price:99000,unit:"500g",category:"fruit",img:"https://www.gianttiger.com/cdn/shop/files/preview_images_1563949_f_01.jpg?v=1767693995?auto=format&fit=crop&w=700&q=80"},
+      {id:4,name:"Cam vàng mọng nước",price:65000,unit:"1kg",category:"fruit",img:"https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=700&q=80"},
+      {id:5,name:"Xoài sấy dẻo",price:45000,unit:"250g",category:"dried",img:"https://xoaisaydeoducphat.com/image/cache/catalog/san-pham/xoai-say-deo/14-400x400.png?auto=format&fit=crop&w=700&q=80"},
+      {id:6,name:"Mít sấy giòn",price:39000,unit:"200g",category:"dried",img:"https://vietnam-porter.jp/html/upload/save_image/dala-200g-premium-crispy-thai-jackfruit-chips-da-lat-specialty-whole-segments-thick-sweetly-crunchy_69ba37a44e7a7.webp?auto=format&fit=crop&w=700&q=80"},
+      {id:7,name:"Khô gà lá chanh",price:55000,unit:"250g",category:"snack",img:"https://product.hstatic.net/200000486829/product/kho_ga_la_chanh_250g_c4fe220a4e7243278e5b9ab2a2186ecb.jpg?auto=format&fit=crop&w=700&q=80"},
+      {id:8,name:"Bánh tráng bơ",price:30000,unit:"200g",category:"snack",img:"https://cdn.hstatic.net/products/200000483069/bestsaeller_e01bae04b0e64678b91bfcb940c5c105_1024x1024.png?auto=format&fit=crop&w=700&q=80"},
+      {id:9,name:"Trà đào cam sả",price:35000,unit:"Chai 500ml",category:"drink",img:"https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=80"},
+      {id:10,name:"Nước ép cam",price:32000,unit:"Chai 500ml",category:"drink",img:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=80"},
+      {id:11,name:"Combo trái cây + snack",price:149000,unit:"1 combo",category:"combo",img:"https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=700&q=80"},
+      {id:12,name:"Combo ăn vặt chill",price:129000,unit:"1 combo",category:"combo",img:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"}
+    ];
+
+    let cart = JSON.parse(localStorage.getItem("huyCart") || "[]");
+    const money = n => n.toLocaleString("vi-VN") + "đ";
+
+    function updateCartUI() {
+      const countEl = document.getElementById("cartCount");
+      if (countEl) countEl.textContent = cart.reduce((s, x) => s + x.qty, 0);
+      renderCart();
+    }
+
+    function renderCart() {
+      const box = document.getElementById("cartItems");
+      if (!box) return;
+      const formBox = document.getElementById("checkoutFormBox");
+      const btn = document.getElementById("btnPlaceOrder");
+
+      if (!cart.length) {
+        box.innerHTML = '<div style="text-align:center;padding:25px;color:var(--muted)">Giỏ hàng đang trống kìa mua hàng đi chời 🍊<br><small>Thêm nhiều món ngon vào nhé!</small></div>';
+        document.getElementById("cartTotal").textContent = "0đ";
+        if (formBox) formBox.style.opacity = "0.5";
+        if (btn) btn.disabled = true;
+        return;
+      }
+      if (formBox) formBox.style.opacity = "1";
+      if (btn) btn.disabled = false;
+
+      let total = 0;
+      box.innerHTML = cart.map(x => {
+        const p = products.find(prod => prod.id === x.id) || { name: "Sản phẩm", price: 0, unit: "phần", img: "" };
+        total += p.price * x.qty;
+        return `<div class="cart-item">
+          <img src="${p.img}" alt="${p.name}">
+          <div>
+            <strong>${p.name}</strong>
+            <small>${money(p.price)} / ${p.unit}</small>
+            <div class="qty">
+              <button onclick="changeQty(${x.id}, -1)">−</button>
+              <b>${x.qty}</b>
+              <button onclick="changeQty(${x.id}, 1)">+</button>
+            </div>
+          </div>
+          <button class="remove" onclick="removeItem(${x.id})">Xóa</button>
+        </div>`;
+      }).join("");
+      document.getElementById("cartTotal").textContent = money(total);
+    }
+
+    window.changeQty = function(id, delta) {
+      const item = cart.find(x => x.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) cart = cart.filter(x => x.id !== id);
+      saveCart();
+    };
+
+    window.removeItem = function(id) {
+      cart = cart.filter(x => x.id !== id);
+      saveCart();
+    };
+
+    function saveCart() {
+      localStorage.setItem("huyCart", JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    window.openCart = function() {
+      document.getElementById("cartModal").classList.add("open");
+      renderCart();
+    };
+
+    window.closeCart = function() {
+      document.getElementById("cartModal").classList.remove("open");
+    };
+
+    window.toggleMobileNav = function() {
+      const nav = document.getElementById("mobileNav");
+      if (nav) nav.classList.toggle("open");
+    };
+
+    // Audio
+    const audio = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+    const musicBtnText = document.getElementById("musicBtnText");
+    const chillPlayIcon = document.getElementById("chillPlayIcon");
+    const chillPlayLabel = document.getElementById("chillPlayLabel");
+    const chillDisc = document.getElementById("chillDisc");
+    let isPlaying = false;
+
+    window.toggleMusic = function() {
+      if (!isPlaying) {
+        audio.play().then(() => {
+          isPlaying = true;
+          musicBtn.classList.add("playing");
+          musicBtnText.textContent = "Đang phát 🎵";
+          if (chillPlayIcon) chillPlayIcon.textContent = "⏸";
+          if (chillPlayLabel) chillPlayLabel.textContent = "Tạm dừng";
+          if (chillDisc) chillDisc.classList.add("rotating");
+          showToast("Đang phát giai điệu thư giãn 🎵");
+        }).catch(err => {
+          showToast("Vui lòng tương tác để nghe nhạc 🎶");
+        });
+      } else {
+        audio.pause();
+        isPlaying = false;
+        musicBtn.classList.remove("playing");
+        musicBtnText.textContent = "Nhạc chill";
+        if (chillPlayIcon) chillPlayIcon.textContent = "▶";
+        if (chillPlayLabel) chillPlayLabel.textContent = "Phát nhạc chill";
+        if (chillDisc) chillDisc.classList.remove("rotating");
+        showToast("Đã tạm dừng nhạc ⏸");
+      }
+    };
+
+    // Google Sheets Real Order Submission
+    window.submitRealOrder = async function() {
+      if (!cart.length) {
+        showToast("Giỏ hàng của bạn đang trống!");
+        return;
+      }
+
+      const name = document.getElementById("orderName").value.trim();
+      const phone = document.getElementById("orderPhone").value.trim();
+      const address = document.getElementById("orderAddress").value.trim();
+      const payment = document.getElementById("orderPayment").value;
+      const note = document.getElementById("orderNote").value.trim();
+
+      if (!name) {
+        showToast("Vui lòng nhập Họ và tên!");
+        document.getElementById("orderName").focus();
+        return;
+      }
+      if (!phone || phone.length < 9) {
+        showToast("Vui lòng nhập Số điện thoại hợp lệ!");
+        document.getElementById("orderPhone").focus();
+        return;
+      }
+      if (!address) {
+        showToast("Vui lòng nhập Địa chỉ nhận hàng!");
+        document.getElementById("orderAddress").focus();
+        return;
+      }
+
+      const orderItems = cart.map(x => {
+        const p = products.find(prod => prod.id === x.id) || { name: "Món ngon", price: 0 };
+        return { id: x.id, name: p.name, price: p.price, qty: x.qty };
+      });
+      const total = orderItems.reduce((sum, it) => sum + (it.price * it.qty), 0);
+
+      const btn = document.getElementById("btnPlaceOrder");
+      btn.disabled = true;
+      btn.innerHTML = "⏳ Đang xử lý & lưu đơn...";
+
+      let sheetSaved = false;
+      let sheetUrl = null;
+
+      let token = getCachedToken();
+      if (!token) {
+        try {
+          const wantSignIn = confirm("Bạn có muốn đăng nhập Google để tự động đồng bộ đơn hàng này vào Google Sheets không?");
+          if (wantSignIn) {
+            const authRes = await signInWithGoogle();
+            token = authRes?.accessToken;
+          }
+        } catch(e) {
+          console.warn("Bỏ qua Google Sign-in");
+        }
+      }
+
+      if (token) {
+        try {
+          const sheetResult = await appendOrderToGoogleSheet({
+            customerName: name,
+            phone,
+            address,
+            paymentMethod: payment,
+            note,
+            items: orderItems,
+            total
+          }, token);
+          sheetSaved = true;
+          sheetUrl = sheetResult.spreadsheetUrl;
+        } catch(err) {
+          console.error("Lỗi Google Sheets:", err);
+        }
+      }
+
+      try {
+        const res = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            customerName: name,
+            phone,
+            address,
+            paymentMethod: payment,
+            note,
+            items: orderItems,
+            total,
+            sheetSynced: sheetSaved
+          })
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          cart = [];
+          saveCart();
+          closeCart();
+
+          let msg = `🎉 Đặt hàng thành công! Mã đơn: ${data.order.orderId}.\nCửa hàng sẽ liên hệ qua SĐT ${phone} để giao hàng.`;
+          if (sheetSaved && sheetUrl) {
+            msg += `\n\n✅ Đơn hàng đã được lưu tự động vào Google Sheets!`;
+            if (confirm(msg + "\n\nBạn có muốn mở xem Google Sheets ngay không?")) {
+              window.open(sheetUrl, "_blank");
+            }
+          } else {
+            alert(msg);
+          }
+          showToast("Đặt hàng thành công! Cảm ơn bạn ❤️");
+        } else {
+          showToast("Lỗi đặt hàng: " + (data.error || "Thử lại"));
+        }
+      } catch(err) {
+        console.error("Lỗi gửi đơn:", err);
+        showToast("Lỗi kết nối máy chủ khi lưu đơn.");
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = "🚀 Xác nhận Đặt hàng ngay";
+      }
+    };
+
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      if (!t) return;
+      t.textContent = msg;
+      t.classList.add("show");
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => t.classList.remove("show"), 2500);
+    }
+
+    updateCartUI();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ & Địa chỉ cửa hàng - Huy Fruit & Snack</title>
+  <meta name="description" content="Địa chỉ cửa hàng Huy Fruit & Snack tại 449 ấp Tân An, Tân Nhuận Đông, Đồng Tháp. Bản đồ Google Maps, số điện thoại hotline, thông tin liên hệ và đặt hàng.">
+  <meta property="og:title" content="Liên hệ & Bản đồ cửa hàng - Huy Fruit & Snack">
+  <meta property="og:description" content="Ghé thăm cửa hàng tại 449 ấp Tân An, Tân Nhuận Đông, Đồng Tháp. Hotline 0365541099.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #2f8f46;
+      --green-dark: #176b30;
+      --green-soft: #eaf7ec;
+      --orange: #ff8a3d;
+      --yellow: #ffd65a;
+      --cream: #fffaf0;
+      --text: #243126;
+      --muted: #6d776f;
+      --white: #fff;
+      --shadow: 0 12px 35px rgba(34,74,42,.10);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Be Vietnam Pro", sans-serif;
+      color: var(--text);
+      background: #fbfdf9;
+      line-height: 1.6;
+    }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+    a { text-decoration: none; color: inherit; }
+
+    .topbar {
+      background: var(--green-dark);
+      color: #fff;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #edf1ed;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      min-height: 76px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: max-content;
+      font-weight: 800;
+      font-size: 21px;
+      color: var(--green-dark);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #76d47f, #2f8f46);
+      box-shadow: 0 8px 18px rgba(47,143,70,.22);
+      font-size: 23px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      margin-left: auto;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #536057;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--green);
+    }
+
+    .nav-links a.active {
+      font-weight: 800;
+      position: relative;
+    }
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-btn {
+      border: 0;
+      background: var(--green);
+      color: #fff;
+      border-radius: 14px;
+      padding: 11px 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 7px 18px rgba(47,143,70,.2);
+      transition: transform .15s;
+    }
+    .cart-btn:hover {
+      transform: translateY(-1px);
+    }
+    .cart-count {
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--green-dark);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 18px;
+    }
+
+    .mobile-nav {
+      display: none;
+      background: #fff;
+      border-bottom: 1px solid #edf1ed;
+      padding: 14px 20px;
+    }
+    .mobile-nav.open {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mobile-nav a {
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 0;
+      border-bottom: 1px dashed #f0f0f0;
+    }
+
+    .breadcrumb-wrap {
+      max-width: 1180px;
+      margin: 18px auto 0;
+      padding: 0 20px;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .breadcrumb a {
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    /* Contact Header */
+    .contact-hero {
+      max-width: 1180px;
+      margin: 22px auto 0;
+      padding: 0 20px;
+    }
+    .contact-hero-box {
+      border-radius: 28px;
+      background: linear-gradient(135deg, #176b30, #27853e);
+      color: #fff;
+      padding: 42px 40px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .contact-hero-content h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      letter-spacing: -.5px;
+    }
+    .contact-hero-content p {
+      margin: 0;
+      opacity: .92;
+      font-size: 15px;
+      max-width: 620px;
+    }
+    .quick-call-btn {
+      background: var(--yellow);
+      color: #4a3b00;
+      font-weight: 800;
+      padding: 14px 24px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    }
+
+    /* Cards Grid */
+    .info-grid {
+      max-width: 1180px;
+      margin: 32px auto 0;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .info-card {
+      background: #fff;
+      border: 1px solid #edf1ed;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform .2s;
+    }
+    .info-card:hover {
+      transform: translateY(-4px);
+    }
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--green-soft);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+    .info-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--green-dark);
+    }
+    .info-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #4f5b52;
+      line-height: 1.6;
+    }
+    .info-card strong {
+      color: var(--text);
+    }
+
+    /* Map & Form Section */
+    .map-section {
+      max-width: 1180px;
+      margin: 40px auto 0;
+      padding: 0 20px;
+    }
+    .map-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 28px;
+    }
+    .map-container {
+      background: #fff;
+      border: 1px solid #edf1ed;
+      border-radius: 26px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+    .map-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .map-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .map-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-map-action {
+      background: var(--green-soft);
+      color: var(--green-dark);
+      border: 1px solid #bfe3c6;
+      border-radius: 10px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .btn-map-action:hover {
+      background: var(--green);
+      color: #fff;
+    }
+    .map-iframe-wrap {
+      width: 100%;
+      height: 440px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #e2ede3;
+      position: relative;
+    }
+    .map-iframe-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Form Container */
+    .form-container {
+      background: #fff;
+      border: 1px solid #edf1ed;
+      border-radius: 26px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    .form-container h2 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      color: var(--green-dark);
+    }
+    .form-container p {
+      margin: 0 0 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #dce4dd;
+      border-radius: 12px;
+      background: #fbfdfb;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(47,143,70,.15);
+      background: #fff;
+    }
+    .btn-send {
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      border: 0;
+      border-radius: 13px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(47,143,70,.25);
+      transition: background .2s, transform .15s;
+    }
+    .btn-send:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      max-width: 1180px;
+      margin: 50px auto 0;
+      padding: 0 20px;
+    }
+    .faq-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .faq-title h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      color: var(--green-dark);
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .faq-card {
+      background: #fff;
+      border: 1px solid #edf1ed;
+      border-radius: 20px;
+      padding: 22px;
+    }
+    .faq-card h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: var(--green-dark);
+    }
+    .faq-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #556257;
+      line-height: 1.7;
+    }
+
+    /* Modal Cart & Real Checkout */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(12,25,15,.55);
+      z-index: 100;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+    .modal.open { display: flex; }
+    .cart-panel {
+      width: min(480px, 100%);
+      height: 100%;
+      background: #fff;
+      padding: 25px;
+      box-shadow: -10px 0 40px rgba(0,0,0,.15);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .cart-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+    .cart-head h2 { margin: 0; font-size: 19px; }
+    .close {
+      border: 0;
+      background: #f2f5f2;
+      width: 35px;
+      height: 35px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px 0;
+      max-height: 200px;
+    }
+    .cart-item {
+      display: grid;
+      grid-template-columns: 50px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .cart-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .cart-item strong { font-size: 13px; }
+    .cart-item small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .qty button {
+      border: 0;
+      background: #edf5ee;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .remove {
+      border: 0;
+      background: none;
+      color: #c94c4c;
+      font-size: 11px;
+    }
+    .cart-total {
+      border-top: 1px solid #eee;
+      padding-top: 14px;
+    }
+    .total-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    /* Checkout fields in Cart */
+    .checkout-form {
+      background: #f9fbf9;
+      border: 1px solid #e5eee6;
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .checkout-form h3 {
+      margin: 0 0 12px;
+      font-size: 14px;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .checkout-field {
+      margin-bottom: 10px;
+    }
+    .checkout-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .checkout-field input, .checkout-field select, .checkout-field textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid #d4ded6;
+      border-radius: 10px;
+      background: #fff;
+      font-size: 13px;
+    }
+    .checkout-btn {
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 13px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      margin-top: 12px;
+      box-shadow: 0 7px 18px rgba(47,143,70,.25);
+    }
+    .checkout-btn:hover {
+      background: var(--green-dark);
+    }
+    .sheets-sync-status {
+      margin-top: 10px;
+      background: #eef7f0;
+      border: 1px solid #c2e5c8;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 11px;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sheets-sync-status a {
+      color: var(--green-dark);
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #183b22;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(15px);
+      pointer-events: none;
+      transition: .25s;
+      z-index: 200;
+      font-size: 13px;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 75px;
+      background: #183b22;
+      color: #dcebdd;
+      padding: 45px 20px 30px;
+    }
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 35px;
+    }
+    footer h3 {
+      color: #fff;
+      margin: 0 0 14px;
+      font-size: 17px;
+    }
+    footer p, footer a {
+      font-size: 13px;
+      color: #c0d3c2;
+      line-height: 1.8;
+    }
+    .footer-bottom {
+      max-width: 1180px;
+      margin: 30px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #8da490;
+    }
+
+    @media(max-width: 960px) {
+      .map-grid {
+        grid-template-columns: 1fr;
+      }
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media(max-width: 600px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-hero-content h1 {
+        font-size: 26px;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">🍊 Cửa hàng mở cửa từ 07:00 – 21:30 mỗi ngày • Hotline: 0365541099</div>
+
+  <header>
+    <nav class="nav">
+      <a href="/" class="logo">
+        <span class="logo-icon">🍊</span>
+        <span>Huy Fruit & Snack</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="/">Trang chủ</a>
+        <a href="/#products">Sản phẩm</a>
+        <a href="/#deal">Ưu đãi</a>
+        <a href="/gioi-thieu">Giới thiệu</a>
+        <a href="/lien-he" class="active">Liên hệ & Bản đồ</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="cart-btn" onclick="openCart()">
+          🛒 Giỏ hàng
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/" onclick="toggleMobileNav()">🏠 Trang chủ</a>
+      <a href="/#products" onclick="toggleMobileNav()">🍎 Sản phẩm</a>
+      <a href="/#categories" onclick="toggleMobileNav()">🍱 Danh mục</a>
+      <a href="/#deal" onclick="toggleMobileNav()">🎉 Ưu đãi</a>
+      <a href="/gioi-thieu">📖 Giới thiệu</a>
+      <a href="/lien-he" class="active">📍 Liên hệ & Bản đồ</a>
+    </div>
+  </header>
+
+  <div class="breadcrumb-wrap">
+    <div class="breadcrumb">
+      <a href="/">Trang chủ</a>
+      <span>/</span>
+      <span>Liên hệ & Bản đồ vị trí</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
+      <div class="contact-hero-box">
+        <div class="contact-hero-content">
+          <h1>Ghé Thăm Cửa Hàng & Liên Hệ</h1>
+          <p>
+            Huy Fruit & Snack luôn hân hạnh đón tiếp quý khách tại cửa hàng để trực tiếp chọn lựa những trái cây tươi ngon và đồ ăn vặt hấp dẫn nhất!
+          </p>
+        </div>
+        <div>
+          <a href="tel:0365541099" class="quick-call-btn">📞 Gọi Hotline: 0365541099</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORE INFO CARDS -->
+    <section class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+        <h3>Địa chỉ cửa hàng</h3>
+        <p><strong>449 Ấp Tân An</strong><br>Xã Tân Nhuận Đông, Huyện Châu Thành, Tỉnh Đồng Tháp</p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">📞</div>
+        <h3>Hotline & Zalo</h3>
+        <p>
+          <a href="tel:0365541099" style="color:var(--green-dark);font-weight:700;">0365541099</a><br>
+          Hỗ trợ đặt hàng và giải đáp thắc mắc 24/7
+        </p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">⏰</div>
+        <h3>Giờ phục vụ</h3>
+        <p><strong>07:00 – 21:30</strong><br>Mở cửa tất cả các ngày trong tuần (kể cả lễ, Tết)</p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">✉️</div>
+        <h3>Email & Hỗ trợ</h3>
+        <p>
+          <strong>thanhhuy061999@gmail.com</strong><br>
+          Nhận báo giá sỉ & đặt giỏ quà số lượng lớn
+        </p>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE GOOGLE MAP & CONTACT FORM -->
+    <section class="map-section">
+      <div class="map-grid">
+        <!-- Google Map Container -->
+        <div class="map-container">
+          <div class="map-header">
+            <div class="map-title">
+              <span>📍</span>
+              <span>Bản đồ Google Maps Cửa hàng</span>
+            </div>
+            <div class="map-actions">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=449+%E1%BA%A4p+T%C3%A2n+An,+T%C3%A2n+Nhu%E1%BA%ADn+%C4%90%C3%B4ng,+Ch%C3%A2u+Th%C3%A0nh,+%C4%90%E1%BB%93ng+Th%C3%A1p" target="_blank" rel="noopener noreferrer" class="btn-map-action">
+                🧭 Chỉ đường đi
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=449+%E1%BA%A4p+T%C3%A2n+An,+T%C3%A2n+Nhu%E1%BA%ADn+%C4%90%C3%B4ng,+Ch%C3%A2u+Th%C3%A0nh,+%C4%90%E1%BB%93ng+Th%C3%A1p" target="_blank" rel="noopener noreferrer" class="btn-map-action">
+                🗺️ Mở Google Maps lớn
+              </a>
+            </div>
+          </div>
+
+          <!-- Embed Google Maps pointing to 449 ấp tân an, Tân Nhuận Đông, Đồng Tháp -->
+          <div class="map-iframe-wrap">
+            <iframe 
+              src="https://maps.google.com/maps?q=449+%E1%BA%A4p+T%C3%A2n+An,+T%C3%A2n+Nhu%E1%BA%ADn+%C4%90%C3%B4ng,+Ch%C3%A2u+Th%C3%A0nh,+%C4%90%E1%BB%93ng+Th%C3%A1p&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Bản đồ vị trí Huy Fruit & Snack tại 449 Ấp Tân An, Tân Nhuận Đông, Đồng Tháp">
+            </iframe>
+          </div>
+
+          <div style="margin-top:14px;padding:12px;background:var(--green-soft);border-radius:14px;font-size:13px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:20px;">💡</span>
+            <span><strong>Mẹo tìm đường:</strong> Cửa hàng nằm ngay trục đường chính ấp Tân An, xã Tân Nhuận Đông. Bạn có thể bấm <strong>"Chỉ đường đi"</strong> để ứng dụng Google Maps dẫn đường trực tiếp đến cửa hàng.</span>
+          </div>
+        </div>
+
+        <!-- Contact Message Form -->
+        <div class="form-container">
+          <h2>Gửi tin nhắn cho chúng tôi</h2>
+          <p>Có câu hỏi về sản phẩm, giao hàng hoặc muốn hợp tác? Hãy gửi lời nhắn ngay dưới đây.</p>
+
+          <form id="contactMsgForm" onsubmit="handleSendContact(event)">
+            <div class="form-group">
+              <label for="cName">Họ và tên *</label>
+              <input type="text" id="cName" placeholder="Nguyễn Văn A" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cPhone">Số điện thoại *</label>
+              <input type="tel" id="cPhone" placeholder="0365541099" required pattern="[0-9]{9,11}">
+            </div>
+
+            <div class="form-group">
+              <label for="cTopic">Nhu cầu liên hệ</label>
+              <select id="cTopic">
+                <option value="Tu vấn mua hàng">Tư vấn mua trái cây & đồ ăn vặt</option>
+                <option value="Đặt giỏ quà tặng">Đặt giỏ quà / hộp quà sinh nhật, lễ Tết</option>
+                <option value="Lấy sỉ / Số lượng lớn">Hợp tác mua sỉ / số lượng lớn</option>
+                <option value="Góp ý phản hồi">Góp ý chất lượng phục vụ</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cMsg">Nội dung tin nhắn *</label>
+              <textarea id="cMsg" rows="4" placeholder="Nhập lời nhắn hoặc món bạn cần đặt..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-send" id="btnSendMsg">
+              ✉️ Gửi tin nhắn ngay
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+      <div class="faq-title">
+        <h2>Câu Hỏi Thường Gặp</h2>
+        <p>Những giải đáp nhanh cho các thắc mắc phổ biến của khách hàng</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h4>🚚 Thời gian giao hàng bao lâu?</h4>
+          <p>Tại khu vực Châu Thành - Sa Đéc - Đồng Tháp, đơn hàng giao nhanh trong 1 – 2 giờ. Đối với các tỉnh thành khác, thời gian vận chuyển từ 1 – 2 ngày với thùng bảo quản chuyên dụng.</p>
+        </div>
+
+        <div class="faq-card">
+          <h4>📦 Trái cây có được đóng gói cẩn thận không?</h4>
+          <p>Từng hộp hoa quả đều có xốp đệm lưới chống va đập, đóng hộp giấy hoặc hộp trong suốt có lỗ thoáng khí để giữ nguyên độ tươi giòn mọng nước.</p>
+        </div>
+
+        <div class="faq-card">
+          <h4>💳 Hình thức thanh toán thế nào?</h4>
+          <p>Quý khách có thể thanh toán tiền mặt khi nhận hàng (COD) hoặc chuyển khoản ngân hàng. Quý khách hoàn toàn được kiểm tra hàng trước khi nhận.</p>
+        </div>
+
+        <div class="faq-card">
+          <h4>🔄 Chính sách đổi trả nếu dập hỏng?</h4>
+          <p>Nếu hoa quả bị dập úng do quá trình vận chuyển, quý khách chỉ cần chụp ảnh gửi qua Hotline/Zalo 0365541099 để được đổi mới 1-1 hoặc hoàn tiền ngay.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div>
+        <h3>🍊 Huy Fruit & Snack</h3>
+        <p>Trái cây tươi và đồ ăn vặt cho những ngày cần một chút ngọt ngào.</p>
+        <p>
+          📍 Địa chỉ: <strong>449 Ấp Tân An, Tân Nhuận Đông, Châu Thành, Đồng Tháp</strong><br>
+          📞 Hotline / Zalo: <strong>0365541099</strong><br>
+          ✉️ Email: <strong>thanhhuy061999@gmail.com</strong><br>
+          ⏰ Giờ mở cửa: 07:00 – 21:30 hàng ngày
+        </p>
+      </div>
+      <div>
+        <h3>Liên kết nhanh</h3>
+        <p>
+          <a href="/">Trang chủ</a><br>
+          <a href="/#products">Sản phẩm nổi bật</a><br>
+          <a href="/#deal">Ưu đãi giảm giá</a><br>
+          <a href="/gioi-thieu">Về chúng tôi</a><br>
+          <a href="/lien-he">Liên hệ & Bản đồ</a>
+        </p>
+      </div>
+      <div>
+        <h3>Hỗ trợ đặt hàng</h3>
+        <p>
+          🚚 Giao tận nơi toàn quốc<br>
+          💳 Thanh toán khi nhận hàng<br>
+          📊 Lưu đơn tự động vào Google Sheets<br>
+          💬 Hotline: 0365541099
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Huy Fruit & Snack. Bản quyền thuộc về Nguyễn Thanh Huy.</div>
+      <div>Cửa hàng tại 449 Ấp Tân An, Tân Nhuận Đông, Đồng Tháp 🌿</div>
+    </div>
+  </footer>
+
+  <!-- CART & REAL CHECKOUT MODAL -->
+  <div class="modal" id="cartModal" onclick="if(event.target===this) closeCart()">
+    <aside class="cart-panel">
+      <div class="cart-head">
+        <h2>🛒 Giỏ hàng & Đặt hàng</h2>
+        <button class="close" onclick="closeCart()">✕</button>
+      </div>
+      
+      <!-- Cart Items -->
+      <div class="cart-items" id="cartItems"></div>
+      
+      <div class="cart-total">
+        <div class="total-line">
+          <span>Tạm tính</span>
+          <span id="cartTotal">0đ</span>
+        </div>
+      </div>
+
+      <!-- Real Order Checkout Form -->
+      <div class="checkout-form" id="checkoutFormBox">
+        <h3>
+          <span>📝 Thông tin giao hàng</span>
+          <small style="font-size:11px;color:var(--muted);font-weight:normal;">* Bắt buộc</small>
+        </h3>
+        
+        <div class="checkout-field">
+          <label>Họ và tên *</label>
+          <input type="text" id="orderName" placeholder="Ví dụ: Nguyễn Văn A" required>
+        </div>
+
+        <div class="checkout-field">
+          <label>Số điện thoại *</label>
+          <input type="tel" id="orderPhone" placeholder="Ví dụ: 0365541099" required pattern="[0-9]{9,11}">
+        </div>
+
+        <div class="checkout-field">
+          <label>Địa chỉ nhận hàng chi tiết *</label>
+          <textarea id="orderAddress" rows="2" placeholder="Số nhà, ấp/thôn, xã/phường, quận/huyện..." required></textarea>
+        </div>
+
+        <div class="checkout-field">
+          <label>Phương thức thanh toán</label>
+          <select id="orderPayment">
+            <option value="COD (Tiền mặt khi nhận hàng)">💵 Tiền mặt khi nhận hàng (COD)</option>
+            <option value="Chuyển khoản ngân hàng">🏦 Chuyển khoản ngân hàng</option>
+          </select>
+        </div>
+
+        <div class="checkout-field">
+          <label>Ghi chú đơn hàng (tuỳ chọn)</label>
+          <input type="text" id="orderNote" placeholder="Ví dụ: Giao giờ hành chính, gọi trước...">
+        </div>
+
+        <div class="sheets-sync-status" id="sheetsStatusNotice">
+          <span>📊 Đơn sẽ tự động lưu vào <strong>Google Sheets</strong></span>
+          <span id="sheetLinkContainer"></span>
+        </div>
+
+        <button class="checkout-btn" id="btnPlaceOrder" onclick="submitRealOrder()">
+          🚀 Xác nhận Đặt hàng ngay
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- SCRIPT FOR CART, CONTACT & GOOGLE SHEETS -->
+  <script type="module">
+    import { 
+      signInWithGoogle, 
+      getCachedToken, 
+      appendOrderToGoogleSheet, 
+      getOrCreateSpreadsheet,
+      onAuthChange
+    } from '/sheets-service.js';
+
+    // Products catalog
+    const products = [
+      {id:1,name:"Dâu tây Đà Lạt",price:89000,unit:"500g",category:"fruit",img:"https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=700&q=80"},
+      {id:2,name:"Xoài cát chín",price:59000,unit:"1kg",category:"fruit",img:"https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=700&q=80"},
+      {id:3,name:"Nho xanh không hạt",price:99000,unit:"500g",category:"fruit",img:"https://www.gianttiger.com/cdn/shop/files/preview_images_1563949_f_01.jpg?v=1767693995?auto=format&fit=crop&w=700&q=80"},
+      {id:4,name:"Cam vàng mọng nước",price:65000,unit:"1kg",category:"fruit",img:"https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=700&q=80"},
+      {id:5,name:"Xoài sấy dẻo",price:45000,unit:"250g",category:"dried",img:"https://xoaisaydeoducphat.com/image/cache/catalog/san-pham/xoai-say-deo/14-400x400.png?auto=format&fit=crop&w=700&q=80"},
+      {id:6,name:"Mít sấy giòn",price:39000,unit:"200g",category:"dried",img:"https://vietnam-porter.jp/html/upload/save_image/dala-200g-premium-crispy-thai-jackfruit-chips-da-lat-specialty-whole-segments-thick-sweetly-crunchy_69ba37a44e7a7.webp?auto=format&fit=crop&w=700&q=80"},
+      {id:7,name:"Khô gà lá chanh",price:55000,unit:"250g",category:"snack",img:"https://product.hstatic.net/200000486829/product/kho_ga_la_chanh_250g_c4fe220a4e7243278e5b9ab2a2186ecb.jpg?auto=format&fit=crop&w=700&q=80"},
+      {id:8,name:"Bánh tráng bơ",price:30000,unit:"200g",category:"snack",img:"https://cdn.hstatic.net/products/200000483069/bestsaeller_e01bae04b0e64678b91bfcb940c5c105_1024x1024.png?auto=format&fit=crop&w=700&q=80"},
+      {id:9,name:"Trà đào cam sả",price:35000,unit:"Chai 500ml",category:"drink",img:"https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=80"},
+      {id:10,name:"Nước ép cam",price:32000,unit:"Chai 500ml",category:"drink",img:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=80"},
+      {id:11,name:"Combo trái cây + snack",price:149000,unit:"1 combo",category:"combo",img:"https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=700&q=80"},
+      {id:12,name:"Combo ăn vặt chill",price:129000,unit:"1 combo",category:"combo",img:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"}
+    ];
+
+    let cart = JSON.parse(localStorage.getItem("huyCart") || "[]");
+    const money = n => n.toLocaleString("vi-VN") + "đ";
+
+    window.toggleMobileNav = function() {
+      const nav = document.getElementById("mobileNav");
+      if (nav) nav.classList.toggle("open");
+    };
+
+    window.openCart = function() {
+      document.getElementById("cartModal").classList.add("open");
+      renderCart();
+    };
+
+    window.closeCart = function() {
+      document.getElementById("cartModal").classList.remove("open");
+    };
+
+    window.changeQty = function(id, delta) {
+      const item = cart.find(x => x.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) cart = cart.filter(x => x.id !== id);
+      saveCart();
+    };
+
+    window.removeItem = function(id) {
+      cart = cart.filter(x => x.id !== id);
+      saveCart();
+    };
+
+    function saveCart() {
+      localStorage.setItem("huyCart", JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const countEl = document.getElementById("cartCount");
+      if (countEl) countEl.textContent = cart.reduce((s, x) => s + x.qty, 0);
+      renderCart();
+    }
+
+    function renderCart() {
+      const box = document.getElementById("cartItems");
+      if (!box) return;
+      if (!cart.length) {
+        box.innerHTML = '<div style="text-align:center;padding:25px;color:var(--muted)">Giỏ hàng đang trống kìa mua hàng đi chời 🍊<br><small>Thêm món ngon vào để đặt hàng nhé!</small></div>';
+        document.getElementById("cartTotal").textContent = "0đ";
+        document.getElementById("checkoutFormBox").style.opacity = "0.5";
+        document.getElementById("btnPlaceOrder").disabled = true;
+        return;
+      }
+      document.getElementById("checkoutFormBox").style.opacity = "1";
+      document.getElementById("btnPlaceOrder").disabled = false;
+
+      let total = 0;
+      box.innerHTML = cart.map(x => {
+        const p = products.find(prod => prod.id === x.id) || { name: "Sản phẩm", price: 0, unit: "phần", img: "" };
+        total += p.price * x.qty;
+        return `<div class="cart-item">
+          <img src="${p.img}" alt="${p.name}">
+          <div>
+            <strong>${p.name}</strong>
+            <small>${money(p.price)} / ${p.unit}</small>
+            <div class="qty">
+              <button onclick="changeQty(${x.id}, -1)">−</button>
+              <b>${x.qty}</b>
+              <button onclick="changeQty(${x.id}, 1)">+</button>
+            </div>
+          </div>
+          <button class="remove" onclick="removeItem(${x.id})">Xóa</button>
+        </div>`;
+      }).join("");
+      document.getElementById("cartTotal").textContent = money(total);
+    }
+
+    // Load active sheet link if configured
+    async function checkSheetConfig() {
+      try {
+        const res = await fetch('/api/sheets-config');
+        const data = await res.json();
+        if (data.spreadsheetUrl) {
+          const container = document.getElementById("sheetLinkContainer");
+          if (container) {
+            container.innerHTML = `<a href="${data.spreadsheetUrl}" target="_blank" rel="noopener noreferrer">📄 Xem Sheet đơn hàng</a>`;
+          }
+        }
+      } catch(e){}
+    }
+    checkSheetConfig();
+
+    // REAL ORDER SUBMISSION WITH GOOGLE SHEETS
+    window.submitRealOrder = async function() {
+      if (!cart.length) {
+        showToast("Giỏ hàng của bạn đang trống!");
+        return;
+      }
+
+      const name = document.getElementById("orderName").value.trim();
+      const phone = document.getElementById("orderPhone").value.trim();
+      const address = document.getElementById("orderAddress").value.trim();
+      const payment = document.getElementById("orderPayment").value;
+      const note = document.getElementById("orderNote").value.trim();
+
+      if (!name) {
+        showToast("Vui lòng nhập Họ và tên người nhận!");
+        document.getElementById("orderName").focus();
+        return;
+      }
+      if (!phone || phone.length < 9) {
+        showToast("Vui lòng nhập Số điện thoại hợp lệ!");
+        document.getElementById("orderPhone").focus();
+        return;
+      }
+      if (!address) {
+        showToast("Vui lòng nhập Địa chỉ nhận hàng!");
+        document.getElementById("orderAddress").focus();
+        return;
+      }
+
+      const orderItems = cart.map(x => {
+        const p = products.find(prod => prod.id === x.id) || { name: "Món ngon", price: 0 };
+        return { id: x.id, name: p.name, price: p.price, qty: x.qty };
+      });
+      const total = orderItems.reduce((sum, it) => sum + (it.price * it.qty), 0);
+
+      const btn = document.getElementById("btnPlaceOrder");
+      btn.disabled = true;
+      btn.innerHTML = "⏳ Đang xử lý & lưu đơn...";
+
+      let sheetSaved = false;
+      let sheetUrl = null;
+
+      // 1. Try to append to Google Sheets using Google Auth Token if available or sign in
+      let token = getCachedToken();
+      if (!token) {
+        // Offer quick Google sign-in to sync or continue
+        try {
+          const shouldSignIn = confirm("Bạn có muốn đăng nhập Google để tự động đồng bộ đơn hàng này vào Google Sheets không?");
+          if (shouldSignIn) {
+            const authRes = await signInWithGoogle();
+            token = authRes?.accessToken;
+          }
+        } catch(e) {
+          console.warn('Bỏ qua đăng nhập Google, lưu đơn vào hệ thống máy chủ.');
+        }
+      }
+
+      if (token) {
+        try {
+          const sheetResult = await appendOrderToGoogleSheet({
+            customerName: name,
+            phone,
+            address,
+            paymentMethod: payment,
+            note,
+            items: orderItems,
+            total
+          }, token);
+          sheetSaved = true;
+          sheetUrl = sheetResult.spreadsheetUrl;
+        } catch(err) {
+          console.error("Lỗi ghi Google Sheets trực tiếp:", err);
+        }
+      }
+
+      // 2. Save order to backend server API
+      try {
+        const orderPayload = {
+          customerName: name,
+          phone,
+          address,
+          paymentMethod: payment,
+          note,
+          items: orderItems,
+          total,
+          sheetSynced: sheetSaved
+        };
+
+        const res = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(orderPayload)
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          cart = [];
+          saveCart();
+          closeCart();
+
+          let msg = `🎉 Đặt hàng thành công! Mã đơn: ${data.order.orderId}.\nCửa hàng sẽ liên hệ qua SĐT ${phone} để giao hàng.`;
+          if (sheetSaved && sheetUrl) {
+            msg += `\n\n✅ Đơn hàng đã được lưu tự động vào Google Sheets!`;
+            if (confirm(msg + "\n\nBạn có muốn mở xem Google Sheets ngay không?")) {
+              window.open(sheetUrl, "_blank");
+            }
+          } else {
+            alert(msg);
+          }
+          showToast("Đặt hàng thành công! Cảm ơn bạn ❤️");
+        } else {
+          showToast("Lỗi đặt hàng: " + (data.error || "Vui lòng thử lại"));
+        }
+      } catch(err) {
+        console.error("Lỗi gửi đơn:", err);
+        showToast("Lỗi kết nối máy chủ. Vui lòng thử lại!");
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = "🚀 Xác nhận Đặt hàng ngay";
+      }
+    };
+
+    window.handleSendContact = function(e) {
+      e.preventDefault();
+      const name = document.getElementById("cName").value;
+      const phone = document.getElementById("cPhone").value;
+      const topic = document.getElementById("cTopic").value;
+      const msg = document.getElementById("cMsg").value;
+
+      const btn = document.getElementById("btnSendMsg");
+      btn.disabled = true;
+      btn.innerHTML = "⏳ Đang gửi...";
+
+      setTimeout(() => {
+        alert(`Cảm ơn bạn ${name}! Huy Fruit & Snack đã nhận được tin nhắn về "${topic}". Chúng tôi sẽ liên hệ bạn qua SĐT ${phone} sớm nhất.`);
+        document.getElementById("contactMsgForm").reset();
+        btn.disabled = false;
+        btn.innerHTML = "✉️ Gửi tin nhắn ngay";
+        showToast("Đã gửi tin nhắn thành công! ✅");
+      }, 700);
+    };
+
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      if (!t) return;
+      t.textContent = msg;
+      t.classList.add("show");
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => t.classList.remove("show"), 2600);
+    }
+
+    updateCartUI();
+  </script>
+</body>
+</html>

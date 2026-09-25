@@ -1,0 +1,15 @@
+{
+  "name": "captain-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'Build ready'"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "firebase": "^12.19.0"
+  }
+}
