@@ -226,11 +226,11 @@
     }
     .checkout{width:100%;padding:14px;border:0;border-radius:13px;background:var(--green);color:#fff;font-weight:800;font-size:15px;margin-top:10px;box-shadow:0 7px 18px rgba(47,143,70,.22)}
     .checkout:hover{background:var(--green-dark)}
-    .sheets-sync-status{
+    .sync-status{
       margin-top:10px;background:#eef7f0;border:1px solid #c2e5c8;border-radius:10px;
       padding:9px 12px;font-size:11px;color:var(--green-dark);display:flex;align-items:center;justify-content:space-between;
     }
-    .sheets-sync-status a{color:var(--green-dark);font-weight:800;text-decoration:underline}
+    .sync-status a{color:var(--green-dark);font-weight:800;text-decoration:underline}
     .toast{
       position:fixed;right:20px;bottom:20px;background:#183b22;color:#fff;padding:12px 16px;
       border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(15px);pointer-events:none;transition:.25s;z-index:200;font-size:13px
@@ -293,7 +293,7 @@
 </head>
 <body>
   <!-- Background music -->
-  <audio id="bgMusic" src="/nhac.mp3" preload="auto" loop></audio>
+  <audio id="bgMusic" src="/BanHang/nhac.mp3" preload="auto" loop></audio>
 
   <div class="topbar">🍊 FREESHIP đơn từ 199K • Trái cây tươi mỗi ngày • Đóng gói sạch đẹp</div>
 
@@ -481,7 +481,7 @@ import {
   getCachedToken, 
   appendOrderToGoogleSheet, 
   getOrCreateSpreadsheet 
-} from '/sheets-service.js';
+} from '/BanHang/sheets-service.js';
 
 const products = [
   {id:1,name:"Dâu tây Đà Lạt",price:89000,unit:"500g",category:"fruit",img:"https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=700&q=80",desc:"Dâu đỏ mọng, thơm và ngọt dịu.",badge:"Bán chạy"},
