@@ -95,7 +95,7 @@ export async function getOrCreateSpreadsheet(token) {
   let spreadsheetId = localStorage.getItem('huy_fruit_spreadsheet_id');
   if (!spreadsheetId) {
     try {
-      const cfgRes = await fetch('/api/sheets-config');
+      const cfgRes = await fetch('/BanHang//api/sheets-config');
       const cfg = await cfgRes.json();
       if (cfg.spreadsheetId) {
         spreadsheetId = cfg.spreadsheetId;
@@ -178,7 +178,7 @@ export async function getOrCreateSpreadsheet(token) {
 
   localStorage.setItem('huy_fruit_spreadsheet_id', newSheetId);
   try {
-    await fetch('/api/sheets-config', {
+    await fetch('/BanHang/api/sheets-config', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ spreadsheetId: newSheetId, spreadsheetUrl: newSheetUrl })
