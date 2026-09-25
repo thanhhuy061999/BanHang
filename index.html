@@ -704,7 +704,7 @@ window.submitRealOrder = async function(){
       closeCart();
       let msg = 'Dat hang thanh cong! Ma don: ${data.order.orderId}. Cua hang se lien he qua SDT ${phone} de giao hang.';
       if(sheetSaved && sheetUrl){
-      msg += `\n\n Đơn hàng đã được lưu tự động vào Google Sheets!`;
+      msg +=`OK`;
       if(confirm(msg + "\n\nBạn có muốn mở xem Google Sheets ngay không?")){
           window.open(sheetUrl, "_blank");
         }
