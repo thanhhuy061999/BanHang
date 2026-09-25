@@ -335,7 +335,7 @@
           <p>Chọn nhanh những loại trái cây mọng nước và món ăn vặt hấp dẫn. Đặt hàng đơn giản, giao tận nơi.</p>
           <div class="hero-actions">
             <a class="primary" href="/BanHang/#products">🛍️ Mua ngay</a>
-            <a class="secondary" href="#categories">Xem danh mục</a>
+            <a class="secondary" href="/BanHang/#categories">Xem danh mục</a>
           </div>
         </div>
       </div>
@@ -677,7 +677,7 @@ window.submitRealOrder = async function(){
 
   // 2. Save order to backend /api/orders
   try {
-    const res = await fetch('/api/orders', {
+    const res = await fetch('/BanHang/api/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
