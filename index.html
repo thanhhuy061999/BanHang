@@ -589,7 +589,7 @@ window.closeCart = function(){
 // Check if spreadsheet link is already configured
 async function checkSheetConfig() {
   try {
-    const res = await fetch('/api/sheets-config');
+    const res = await fetch('/BanHang/api/sheets-config');
     const data = await res.json();
     if (data.spreadsheetUrl) {
       const container = document.getElementById("sheetLinkContainer");
